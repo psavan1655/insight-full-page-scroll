@@ -1,13 +1,7 @@
-var current = $(window).scrollTop();
-var total = $(window).height() - current;
-var ele = $(".train");
-var currPosition = ele.position().left + 360;
-var trackLength = 300;
-
-$(window).scroll(function (event) {
-  current = $(window).scrollTop();
-  console.log({ total: total, current: current });
-  console.log((current / total) * 100);
-  var newPosition = trackLength * (current / total);
-  ele.css({ left: currPosition + newPosition + "px" });
-});
+// $(window).scroll(function () {
+//   console.log("demo demo demo");
+//   if ($("#specsallA").is(":visible")) {
+//     // do your special stuff here
+//   }
+// });
+// $(".covervid-video").coverVid(1920, 1080);

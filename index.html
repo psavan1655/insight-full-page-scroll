@@ -17,6 +17,7 @@
     ></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="./index.css" />
 
@@ -44,10 +45,9 @@
               class="d-flex align-items-center my-2 ml my-lg-0 me-lg-auto text-white text-decoration-none"
             >
               <img
-                src="./assets/logo.png"
+                src="./assets/whiteLogo.png"
                 alt=""
                 srcset=""
-                class="bg-white"
                 style="margin-left: 5rem"
                 height="50px"
                 width="150px"
@@ -112,63 +112,118 @@
 
     <main class="fullPageScroll">
       <!-- 1st Page -->
-      <section class="one fullPage">
-        <h1
-          class="text-white flgshpConsole demo"
-          data-aos="fade-right"
-          data-aos-anchor-placement="top-center"
-        >
-          MEET OUR FLAGSHIP INSOLE
-        </h1>
-        <img src="./assets/logo.png" class="vidElement" alt="" srcset="" />
+      <section class="one fullPage1">
+        <h1 class="text-white flgshpConsole1">MEET OUR FLAGSHIP INSOLE</h1>
+        <div class="pg1-container">
+          <div class="text-white pg1-txt1">
+            <img
+              src="./assets/whiteLogo.png"
+              alt=""
+              srcset=""
+              height="30px"
+              width="100px"
+            />
+            <br />
+            <p class="pg1-contura-txt">
+              CONTOURA<sup style="font-size: 15px; top: -1rem"> &#174;</sup>
+            </p>
+          </div>
+          <div class="covervid-wrapper">
+            <img src="./assets/01.png" alt="Sole" class="pg1-img" />
+          </div>
+          <div class="position-relative">
+            <div class="pg1-anatomically-txt">
+              ANATOMICALLY-SHAPED DESIGN <br />
+              <p class="pg1-anatomically-desc-txt">
+                It's all in the name. INSITE<sup> &#174;</sup> Contoura
+                <sup> &#174;</sup> insoles were developed using our full
+                patented, anatomical shape algorithm, matching the underfoot
+                contours for the majority of footwear consumers.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- 2nd Page -->
-      <section class="two fullPage">
-        <!-- <h1 class="text-white flgshpConsole">MEET OUR FLAGSHIP INSOLE</h1>
-        <div class="container-fluid bg-danger">hey</div> -->
-        <div id="trainMotion bg-danger">
-          <img
-            src="./assets/logo.png"
-            class="vidElement train bg-danger"
-            alt=""
-            srcset=""
-          />
-        </div>
-        <!-- <div id="trainMotion">
-          <img src="http://i.imgur.com/uKxkshD.png" alt="Train" class="train" />
+      <section class="one fullPage1">
+        <h1 class="text-white flgshpConsole2"></h1>
+        <div class="pg1-container">
+          <div class="text-white pg1-txt1">
+            <img
+              src="./assets/whiteLogo.png"
+              alt=""
+              srcset=""
+              height="30px"
+              width="100px"
+            />
+            <br />
+            <p class="pg1-contura-txt">
+              CONTOURA<sup style="font-size: 15px; top: -1rem"> &#174;</sup>
+            </p>
+          </div>
+          <div class="covervid-wrapper2">
+            <video class="vid01" poster="./assets/02.png" autoplay loop muted>
+              <source src="./assets/videos/vid.mp4#t=0,2" type="video/mp4" />
+              <!-- <source src="./assets/videos/vid" type="video/webm" /> -->
+            </video>
+            <!-- <img src="./assets/02.png" alt="Sole" class="pg1-img" /> -->
+          </div>
+          <!-- <div class="position-relative">
+            <div class="pg1-anatomically-txt">
+              ANATOMICALLY-SHAPED DESIGN <br />
+              <p class="pg1-anatomically-desc-txt">
+                It's all in the name. INSITE<sup> &#174;</sup> Contoura
+                <sup> &#174;</sup> insoles were developed using our full
+                patented, anatomical shape algorithm, matching the underfoot
+                contours for the majority of footwear consumers.
+              </p>
+            </div>
+          </div>
         </div> -->
       </section>
+      <!-- <div class="covervid-wrapper2">
+        <video
+          data-aos="fade-left"
+          src="./assets/vid.mp4"
+          class="covervid-video"
+          id="vid02"
+          autoplay
+          muted
+        ></video>
+      </div> -->
 
       <!-- 3rd Page -->
-      <section class="thr fullPage bg-danger">
-        <h1 class="text-white flgshpConsole">MEET OUR FLAGSHIP INSOLE</h1>
-        <div class="container-fluid bg-danger">hey</div>
+      <section class="thr fullPage">
+        <h1 class="text-white flgshpConsole3" data-aos="fade-right">
+          MEET OUR FLAGSHIP INSOLE
+        </h1>
+        <div class="container-fluid">hey</div>
       </section>
 
       <!-- 4th Page -->
       <section class="fou fullPage">
         <h1 class="text-white flgshpConsole">MEET OUR FLAGSHIP INSOLE</h1>
-        <div class="container-fluid bg-danger">hey</div>
+        <div class="container-fluid">hey</div>
       </section>
 
       <!-- 5th Page -->
-      <section class="fiv fullPage bg-danger">
+      <section class="fiv fullPage">
         <h1 class="text-white flgshpConsole">MEET OUR FLAGSHIP INSOLE</h1>
-        <div class="container-fluid bg-danger">hey</div>
+        <div class="container-fluid">hey</div>
       </section>
 
       <!-- 6th Page -->
       <section class="six fullPage">
         <h1 class="text-white flgshpConsole">MEET OUR FLAGSHIP INSOLE</h1>
-        <div class="container-fluid bg-danger">hey</div>
+        <div class="container-fluid">hey</div>
       </section>
     </main>
 
     <script>
+      console.log("test");
       AOS.init();
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="./index.js"></script>
   </body>
