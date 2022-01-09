@@ -42,6 +42,7 @@ section {
 }
 
 .pg1-txt1 {
+  background-color: rgba(0, 0, 0, 0);
   margin-left: 10rem;
   margin-top: 10rem;
   position: absolute;
@@ -65,11 +66,11 @@ section {
   font-weight: 500;
 }
 
-.pag1-txt1 {
+/* .pag1-txt1 {
   position: relative;
   display: flex;
   flex-direction: row-reverse;
-}
+} */
 
 .pg1-anatomically-txt-after-animate {
   position: absolute;
@@ -179,4 +180,68 @@ section {
   font-size: 1.2rem;
   font-weight: 500;
   animation: 1.5s ease-out 0s 1 slideInFromLeft2;
+}
+
+.pg5-uppertext-container {
+  /* border: 2px solid red; */
+  background-color: rgba(0, 0, 0, 0);
+  transform: scale(2);
+  top: -5rem;
+  margin-left: 55rem;
+  width: 100%;
+  width: max-content;
+  position: absolute;
+  z-index: 1;
+}
+
+@keyframes slideInFromLeft6 {
+  0% {
+    /* transform: translateX(-50%); */
+    right: 50rem;
+  }
+  100% {
+    /* transform: translateX(0); */
+    right: 30rem;
+  }
+}
+
+.covervid-wrapper6 {
+  bottom: -28rem;
+  transform: scale(1.7, 1.4);
+  position: absolute;
+  right: 30rem;
+  height: 28rem;
+  width: 50rem;
+  animation: 1.5s ease-out 0s 1 slideInFromLeft6;
+}
+
+@keyframes slideInFromLeft6Txt {
+  0% {
+    /* transform: translateX(-50%); */
+    left: -10rem;
+  }
+  100% {
+    /* transform: translateX(0); */
+    left: 0rem;
+  }
+}
+
+.pg6-customisable-txt {
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  bottom: -10rem;
+  margin-left: 0rem;
+  color: white;
+  width: 25rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  animation: 1.5s ease-out 0s 1 slideInFromLeft6Txt;
+}
+
+.pg6-img {
+  transform: scale(0.5);
+  /* height: 20rem; */
+  /* margin-left: 30rem; */
+  /* width: 30rem; */
+  /* z-index: 2; */
 }
