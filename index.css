@@ -1,3 +1,13 @@
+* {
+  font-family: "Gotham", sans-serif;
+  font-family: "Gotham Black", sans-serif;
+  font-family: "Gotham Light", sans-serif;
+  font-family: "Gotham Thin", sans-serif;
+  font-family: "Gotham XLight", sans-serif;
+  font-family: "Gotham Book", sans-serif;
+  font-family: "Gotham Ultra", sans-serif;
+}
+
 body {
   background-color: black;
 }
@@ -6,16 +16,8 @@ div {
   cursor: pointer;
 }
 
-body {
-  width: 100%;
-}
-
 .bg-dark {
   background-color: black !important;
-}
-
-#header {
-  visibility: visible;
 }
 
 .one {
@@ -32,6 +34,10 @@ body {
 
 section {
   height: 85vh;
+}
+
+#mainContainer {
+  /* background: 2px solid red; */
 }
 
 .fullPage1 {
@@ -361,7 +367,12 @@ section {
 .footer-socialmedia-icon1 {
   margin-left: 0.5rem;
   border-radius: 50%;
-  height: 1.6rem;
-  width: 1.6rem;
+  height: 1.7rem;
+  width: 1.7rem;
   background-color: #00bbb4;
+}
+
+.footer-socialmedia-icon1 > i {
+  margin-left: -0.2rem;
+  margin-top: 0.2rem;
 }
