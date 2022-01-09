@@ -11,7 +11,7 @@ const pg2TxtBx2 =
   "  <div class='position-relative'> <div class='pg2-dynamic-txt'>    DYNAMIC HEEL CUP AND ARCH SUPPORT <br />    <p class='pg1-anatomically-desc-txt'>The insole design is based on more than 120,000 prescribed footscans, effectiveky fitting 85% of wearers. With podiatrist-designed arch support, a stabilizing heel cup, and high rebound with shape-retention foam, Contoura <sup> &#174;</sup> offers maximum comfort, performance, and support, tailored to your midsole design.</p>  </div> </div>";
 
 const pg2Vid2 =
-  "<div class='covervid-wrapper2'> <video class='vid01' poster='./assets/02.png'  autoplay muted preload='auto'> <source src='./assets/videos/V1.webm' type='video/webm'/></video></div>";
+  "<div class='covervid-wrapper2'> <video class='vid01'  autoplay muted preload='auto'> <source src='./assets/videos/V1.webm' type='video/webm'/></video></div>";
 
 const pg3Vid3 =
   "<div class='covervid-wrapper3'> <video class='vid01'  autoplay muted preload='auto'> <source src='./assets/videos/V2.webm' type='video/webm' /></video></div>";
@@ -20,7 +20,7 @@ const pg3TxtBx3 =
   "<div class='position-relative'><div class='pg3-sustainable-txt'>SUSTAINABLE MATERIALS <br />  <p class='pg1-anatomically-desc-txt'>    Contoura <sup> &#174;</sup> features innovative polyurethane (PU) foam technology, which not only supports its ergonomic shape, but results in dramatic material savings. Because the foam is poured into a mold rather than into sheets that are later cut and discarded. we use substantially less amterial, power, and natural resources.  </p></div>";
 
 const pg4Vid4 =
-  "<div class='covervid-wrapper2'> <video class='vid01' poster='./assets/02.png'  autoplay muted preload='auto'> <source src='./assets/videos/V4.webm' type='video/webm'/></video></div>";
+  "<div class='covervid-wrapper2'> <video class='vid01'  autoplay muted preload='auto'> <source src='./assets/videos/V4.webm' type='video/webm'/></video></div>";
 
 const pg4TxtBx4 =
   "<img src='./assets/whiteLogo.png' height='30px' width='100px'/> <br /><p class='pg1-contura-txt'> CONTOURA<sup style='font-size: 15px; top: -1rem'> &#174;</sup> </p>";
