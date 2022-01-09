@@ -62,6 +62,7 @@ function detectMouseWheelDirection(e) {
 }
 
 function handleMouseWheelDirection(direction) {
+  console.log(globalWheelCount);
   if (direction == "down") {
     if (globalWheelCount === 6) {
       globalWheelCount = 6;
