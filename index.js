@@ -7,16 +7,16 @@ const pg1Img1 =
   "<div class='covervid-wrapper'>  <img src='./assets/01.png' alt='Sole' class='pg1-img' /></div>";
 
 const pg2TxtBx2 =
-  "  <div > <div class='pg2-dynamic-txt'>    DYNAMIC HEEL CUP AND ARCH SUPPORT <br />    <p class='pg1-anatomically-desc-txt'>The insole design is based on more than 120,000 prescribed footscans, effectiveky fitting 85% of wearers. With podiatrist-designed arch support, a stabilizing heel cup, and high rebound with shape-retention foam, Contoura <sup> &#174;</sup> offers maximum comfort, performance, and support, tailored to your midsole design.</p>  </div> </div>";
+  "  <div class='pg2-dynamic-txt'>    DYNAMIC HEEL CUP AND ARCH SUPPORT <br />    <p class='pg1-anatomically-desc-txt'>The insole design is based on more than 120,000 prescribed footscans, effectiveky fitting 85% of wearers. With podiatrist-designed arch support, a stabilizing heel cup, and high rebound with shape-retention foam, Contoura <sup> &#174;</sup> offers maximum comfort, performance, and support, tailored to your midsole design.</p>  </div>";
 
 const pg2Vid2 =
   "<div class='covervid-wrapper2'> <video class='vid01' poster='./assets/01.png'  autoplay muted preload='metadata'> <source src='./assets/videos/V1.webm' type='video/webm'/></video></div>";
 
 const pg3Vid3 =
-  "<div class='covervid-wrapper3'> <video class='vid01'  autoplay muted preload='metadata'> <source src='./assets/videos/V2.webm' type='video/webm' /></video></div>";
+  "<div class='covervid-wrapper3'> <video class='vid03'  autoplay muted preload='metadata'> <source src='./assets/videos/V2.webm' type='video/webm' /></video></div>";
 
 const pg3TxtBx3 =
-  "<div><div class='pg3-sustainable-txt'>SUSTAINABLE MATERIALS <br />  <p class='pg1-anatomically-desc-txt'>    Contoura <sup> &#174;</sup> features innovative polyurethane (PU) foam technology, which not only supports its ergonomic shape, but results in dramatic material savings. Because the foam is poured into a mold rather than into sheets that are later cut and discarded. we use substantially less amterial, power, and natural resources.  </p></div>";
+  "<div class='pg3-sustainable-txt'>SUSTAINABLE MATERIALS <br />  <p class='pg1-anatomically-desc-txt'>    Contoura <sup> &#174;</sup> features innovative polyurethane (PU) foam technology, which not only supports its ergonomic shape, but results in dramatic material savings. Because the foam is poured into a mold rather than into sheets that are later cut and discarded. we use substantially less amterial, power, and natural resources.  </p></div>";
 
 const pg4Vid4 =
   "<div class='covervid-wrapper2'> <video class='vid01'  autoplay muted preload='metadata'> <source src='./assets/videos/V4.webm' type='video/webm'/></video></div>";
@@ -69,7 +69,7 @@ src.addEventListener(
     deltaY = e.changedTouches[0].clientY - clientY;
     console.log(deltaY);
     let touchDirection = deltaY > 0;
-    if (touchDirection == false && deltaY < -100) {
+    if (touchDirection == false && deltaY < -50) {
       if (globalWheelCount === 15) {
         globalWheelCount = 15;
       } else {
@@ -96,7 +96,7 @@ src.addEventListener(
       } else if (globalWheelCount == 6) {
         $("#footerContainer").html(`${footer1}${footer2}`);
       }
-    } else if (touchDirection == true && deltaY > 100) {
+    } else if (touchDirection == true && deltaY > 50) {
       if (globalWheelCount === 0) {
         globalWheelCount = 0;
       } else {
@@ -155,66 +155,75 @@ function detectMouseWheelDirection(e) {
   return direction;
 }
 
+var timeOutBool = true;
+
 function handleMouseWheelDirection(direction) {
-  if (direction == "down") {
-    if (globalWheelCount === 15) {
-      globalWheelCount = 15;
+  if (timeOutBool === true) {
+    // Main logic
+    if (direction == "down") {
+      if (globalWheelCount === 15) {
+        globalWheelCount = 15;
+      } else {
+        globalWheelCount += 1;
+      }
+      if (globalWheelCount == 1) {
+        $(".pg1-txt1").html(pg2TxtBx2);
+        $(".pg1-anatomically-txt").animate({ opacity: "hide" });
+        $(".flgshpConsole1").animate({ opacity: "hide" });
+        $("#img-container").html(pg2Vid2);
+      } else if (globalWheelCount == 2) {
+        $("#img-container").html(pg3Vid3);
+        $(".pg1-txt1").html(pg3TxtBx3);
+      } else if (globalWheelCount == 3) {
+        $("#img-container").html(pg4Vid4);
+        $(".pg1-txt1").html(pg4TxtBx4);
+      } else if (globalWheelCount == 4) {
+        $("#img-container").html(pg5Vid5);
+        $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
+      } else if (globalWheelCount == 5) {
+        $(".pg1-txt1").html(pg6TxtBx6);
+        $("#img-container").html(pg6Img6);
+      } else if (globalWheelCount == 6) {
+        $("#footerContainer").html(`${footer1}${footer2}`);
+      }
+    } else if (direction == "up") {
+      if (globalWheelCount === 0) {
+        globalWheelCount = 0;
+      } else {
+        globalWheelCount -= 1;
+      }
+      if (globalWheelCount === 0) {
+        $(".one").animate({ left: "0", opacity: "show" });
+        $(".flgshpConsole1").animate({ opacity: "show" });
+        $(".pg1-anatomically-txt").animate({ opacity: "show" }).html(pg1TxtBx2);
+        $("#img-container").html(pg1Img1);
+        $(".pg1-txt1").html(pg1TxtBx1);
+      } else if (globalWheelCount == 1) {
+        $("#img-container").html(pg2Vid2);
+        $(".pg1-txt1").html(pg2TxtBx2);
+      } else if (globalWheelCount == 2) {
+        $("#img-container").html(pg3Vid3);
+        $(".pg1-txt1").html(pg3TxtBx3);
+      } else if (globalWheelCount == 3) {
+        $("#img-container").html(pg4Vid4);
+        $(".pg1-txt1").html(pg4TxtBx4);
+        $("#footerContainer").html("");
+      } else if (globalWheelCount == 4) {
+        $("#img-container").html(pg5Vid5);
+        $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
+        $("#footerContainer").html(footer1);
+      } else if (globalWheelCount == 5) {
+        $(".pg1-txt1").html(pg6TxtBx6);
+        $("#img-container").html(pg6Img6);
+      } else if (globalWheelCount == 6) {
+      }
     } else {
-      globalWheelCount += 1;
+      // this means the direction of the mouse wheel could not be determined
     }
-    if (globalWheelCount == 1) {
-      $(".pg1-txt1").html(pg2TxtBx2);
-      $(".pg1-anatomically-txt").animate({ opacity: "hide" });
-      $(".flgshpConsole1").animate({ opacity: "hide" });
-      $("#img-container").html(pg2Vid2);
-    } else if (globalWheelCount == 2) {
-      $("#img-container").html(pg3Vid3);
-      $(".pg1-txt1").html(pg3TxtBx3);
-    } else if (globalWheelCount == 3) {
-      $("#img-container").html(pg4Vid4);
-      $(".pg1-txt1").html(pg4TxtBx4);
-    } else if (globalWheelCount == 4) {
-      $("#img-container").html(pg5Vid5);
-      $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
-    } else if (globalWheelCount == 5) {
-      $(".pg1-txt1").html(pg6TxtBx6);
-      $("#img-container").html(pg6Img6);
-    } else if (globalWheelCount == 6) {
-      $("#footerContainer").html(`${footer1}${footer2}`);
-    }
-  } else if (direction == "up") {
-    if (globalWheelCount === 0) {
-      globalWheelCount = 0;
-    } else {
-      globalWheelCount -= 1;
-    }
-    if (globalWheelCount === 0) {
-      $(".one").animate({ left: "0", opacity: "show" });
-      $(".flgshpConsole1").animate({ opacity: "show" });
-      $(".pg1-anatomically-txt").animate({ opacity: "show" }).html(pg1TxtBx2);
-      $("#img-container").html(pg1Img1);
-      $(".pg1-txt1").html(pg1TxtBx1);
-    } else if (globalWheelCount == 1) {
-      $("#img-container").html(pg2Vid2);
-      $(".pg1-txt1").html(pg2TxtBx2);
-    } else if (globalWheelCount == 2) {
-      $("#img-container").html(pg3Vid3);
-      $(".pg1-txt1").html(pg3TxtBx3);
-    } else if (globalWheelCount == 3) {
-      $("#img-container").html(pg4Vid4);
-      $(".pg1-txt1").html(pg4TxtBx4);
-      $("#footerContainer").html("");
-    } else if (globalWheelCount == 4) {
-      $("#img-container").html(pg5Vid5);
-      $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
-      $("#footerContainer").html(footer1);
-    } else if (globalWheelCount == 5) {
-      $(".pg1-txt1").html(pg6TxtBx6);
-      $("#img-container").html(pg6Img6);
-    } else if (globalWheelCount == 6) {
-    }
-  } else {
-    // this means the direction of the mouse wheel could not be determined
+    timeOutBool = false;
+    setTimeout(() => {
+      timeOutBool = true;
+    }, 1000);
   }
 }
 document.onmousewheel = function (e) {
