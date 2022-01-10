@@ -121,13 +121,13 @@ src.addEventListener(
       } else if (globalWheelCount == 3) {
         $("#img-container").html(pg4Vid4);
         $(".pg1-txt1").html(pg4TxtBx4);
+        $("#footerContainer").html("");
       } else if (globalWheelCount == 4) {
         $("#img-container").html(pg5Vid5);
-        $("#footerContainer").html("");
         $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
+        $("#footerContainer").html(footer1);
       } else if (globalWheelCount == 5) {
         $(".pg1-txt1").html(pg6TxtBx6);
-        $("#footerContainer").html(footer1);
         $("#img-container").html(pg6Img6);
       } else if (globalWheelCount == 6) {
         $("body").css({
@@ -223,13 +223,13 @@ async function handleMouseWheelDirection(direction) {
       } else if (globalWheelCount == 3) {
         $("#img-container").html(pg4Vid4);
         $(".pg1-txt1").html(pg4TxtBx4);
+        $("#footerContainer").html("");
       } else if (globalWheelCount == 4) {
         $("#img-container").html(pg5Vid5);
-        $("#footerContainer").html("");
         $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
+        $("#footerContainer").html(footer1);
       } else if (globalWheelCount == 5) {
         $(".pg1-txt1").html(pg6TxtBx6);
-        $("#footerContainer").html(footer1);
         $("#img-container").html(pg6Img6);
       } else if (globalWheelCount == 6) {
         $("body").css({
