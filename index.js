@@ -198,7 +198,8 @@ async function handleMouseWheelDirection(direction) {
         $("body").css({
           "background-color": "black",
           width: "100%",
-          overflow: "visible",
+          "overflow-x": "hidden",
+          "overflow-y": "visible",
         });
       }
     } else if (direction == "up") {
@@ -234,7 +235,8 @@ async function handleMouseWheelDirection(direction) {
         $("body").css({
           "background-color": "black",
           width: "100%",
-          overflow: hidden,
+          "overflow-x": "hidden",
+          "overflow-y": "hidden",
         });
       }
     } else {
