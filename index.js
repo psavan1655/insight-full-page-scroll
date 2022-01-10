@@ -10,28 +10,27 @@ const pg2TxtBx2 =
   "  <div class='pg2-dynamic-txt'>    DYNAMIC HEEL CUP AND ARCH SUPPORT <br />    <p class='pg1-anatomically-desc-txt'>The insole design is based on more than 120,000 prescribed footscans, effectiveky fitting 85% of wearers. With podiatrist-designed arch support, a stabilizing heel cup, and high rebound with shape-retention foam, Contoura <sup> &#174;</sup> offers maximum comfort, performance, and support, tailored to your midsole design.</p>  </div>";
 
 const pg2Vid2 =
-  "<div class='covervid-wrapper2'> <video class='vid01' poster='./assets/01.png'  autoplay muted preload='metadata'> <source src='./assets/videos/V1.webm' type='video/webm'/></video></div>";
+  "<div class='covervid-wrapper2'> <video class='vid01' id='myVideo' poster='./assets/01.png' autoplay muted preload='auto'> <source preload='auto' src='./assets/videos/V1.webm' type='video/webm'/></video></div>";
 
 const pg3Vid3 =
-  "<div class='covervid-wrapper3'> <video class='vid03'  autoplay muted preload='metadata'> <source src='./assets/videos/V2.webm' type='video/webm' /></video></div>";
+  "<div class='covervid-wrapper3'> <video class='vid03'  autoplay muted preload='auto'> <source preload='auto' src='./assets/videos/V2.webm' type='video/webm' /></video></div>";
 
 const pg3TxtBx3 =
   "<div class='pg3-sustainable-txt'>SUSTAINABLE MATERIALS <br />  <p class='pg1-anatomically-desc-txt'>    Contoura <sup> &#174;</sup> features innovative polyurethane (PU) foam technology, which not only supports its ergonomic shape, but results in dramatic material savings. Because the foam is poured into a mold rather than into sheets that are later cut and discarded. we use substantially less amterial, power, and natural resources.  </p></div>";
 
 const pg4Vid4 =
-  "<div class='covervid-wrapper2'> <video class='vid01'  autoplay muted preload='metadata'> <source src='./assets/videos/V4.webm' type='video/webm'/></video></div>";
+  "<div class='covervid-wrapper4'> <video class='vid04'  autoplay muted preload='auto'> <source src='./assets/videos/V3.webm' type='video/webm'/></video></div>";
 
 const pg4TxtBx4 =
-  "<img src='./assets/whiteLogo.png' height='30px' width='100px'/> <br /><p class='pg1-contura-txt'> CONTOURA<sup style='font-size: 15px; top: -1rem'> &#174;</sup> </p>";
-
+  "   <div class='pg4-txt4 text-white' id='onetext'>  <img  src='./assets/64.png'  height='200px'  width='200px'/><p>  MANUFACTURING WASTE</p></div>  ";
 const pg5Vid5 =
-  "<div class='covervid-wrapper3'> <video class='vid01'  autoplay muted preload='metadata'> <source src='./assets/videos/V4.webm' type='video/webm' /></video></div>";
+  "<div class='covervid-wrapper5'> <video class='vid05'  autoplay muted preload='auto'> <source src='./assets/videos/V4.webm' type='video/webm' /></video></div>";
 
 const pg5TxtBx5 =
   "<div><div class='pg3-sustainable-txt'>OUT-OF-THE-BOX COMFORT FOR EVERYONE<br />  <p class='pg1-anatomically-desc-txt'>    Contoura <sup> &#174;</sup>offers the highest levels of comfort, performance, support, and stability on the market today. Dynamic arch support helps control pronation without restricting it, assisting with natural foot motion.</p></div>";
 
 const pg5TxtBx5Upper =
-  "<div class='pg5-uppertext-container'><img src='./assets/whiteLogo.png' height='30px' width='100px'/> <br /><p class=''> CONTOURA<sup style='font-size: 15px; top: -1rem'> &#174;</sup> </p></div>";
+  "   <div class='pg5-txt5-upper text-white' id='onetext'>  <img  src='./assets/33.png'  height='200px'  width='200px'/><p>  MANUFACTURING EFFICIENCY</p></div>  ";
 
 const pg6TxtBx6 =
   "  <div> <div class='pg6-customisable-txt'>    DYNAMIC HEEL CUP AND ARCH SUPPORT <br />    <p class='pg1-anatomically-desc-txt'>The insole design is based on more than 120,000 prescribed footscans, effectiveky fitting 85% of wearers. With podiatrist-designed arch support, a stabilizing heel cup, and high rebound with shape-retention foam, Contoura <sup> &#174;</sup> offers maximum comfort, performance, and support, tailored to your midsole design.</p>  </div> </div>";
@@ -70,8 +69,8 @@ src.addEventListener(
     console.log(deltaY);
     let touchDirection = deltaY > 0;
     if (touchDirection == false && deltaY < -50) {
-      if (globalWheelCount === 15) {
-        globalWheelCount = 15;
+      if (globalWheelCount === 10) {
+        globalWheelCount = 10;
       } else {
         globalWheelCount += 1;
       }
@@ -95,6 +94,12 @@ src.addEventListener(
         $("#img-container").html(pg6Img6);
       } else if (globalWheelCount == 6) {
         $("#footerContainer").html(`${footer1}${footer2}`);
+      } else if (globalWheelCount == 7) {
+        $("body").css({
+          "background-color": "black",
+          width: "100%",
+          overflow: "visible",
+        });
       }
     } else if (touchDirection == true && deltaY > 50) {
       if (globalWheelCount === 0) {
@@ -117,15 +122,20 @@ src.addEventListener(
       } else if (globalWheelCount == 3) {
         $("#img-container").html(pg4Vid4);
         $(".pg1-txt1").html(pg4TxtBx4);
-        $("#footerContainer").html("");
       } else if (globalWheelCount == 4) {
         $("#img-container").html(pg5Vid5);
+        $("#footerContainer").html("");
         $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
-        $("#footerContainer").html(footer1);
       } else if (globalWheelCount == 5) {
         $(".pg1-txt1").html(pg6TxtBx6);
+        $("#footerContainer").html(footer1);
         $("#img-container").html(pg6Img6);
       } else if (globalWheelCount == 6) {
+        $("body").css({
+          "background-color": "black",
+          width: "100%",
+          overflow: hidden,
+        });
       }
     }
 
@@ -157,7 +167,7 @@ function detectMouseWheelDirection(e) {
 
 var timeOutBool = true;
 
-function handleMouseWheelDirection(direction) {
+async function handleMouseWheelDirection(direction) {
   if (timeOutBool === true) {
     // Main logic
     if (direction == "down") {
@@ -167,10 +177,10 @@ function handleMouseWheelDirection(direction) {
         globalWheelCount += 1;
       }
       if (globalWheelCount == 1) {
+        $("#img-container").html(pg2Vid2);
         $(".pg1-txt1").html(pg2TxtBx2);
         $(".pg1-anatomically-txt").animate({ opacity: "hide" });
         $(".flgshpConsole1").animate({ opacity: "hide" });
-        $("#img-container").html(pg2Vid2);
       } else if (globalWheelCount == 2) {
         $("#img-container").html(pg3Vid3);
         $(".pg1-txt1").html(pg3TxtBx3);
@@ -185,6 +195,12 @@ function handleMouseWheelDirection(direction) {
         $("#img-container").html(pg6Img6);
       } else if (globalWheelCount == 6) {
         $("#footerContainer").html(`${footer1}${footer2}`);
+      } else if (globalWheelCount == 7) {
+        $("body").css({
+          "background-color": "black",
+          width: "100%",
+          overflow: "visible",
+        });
       }
     } else if (direction == "up") {
       if (globalWheelCount === 0) {
@@ -207,15 +223,20 @@ function handleMouseWheelDirection(direction) {
       } else if (globalWheelCount == 3) {
         $("#img-container").html(pg4Vid4);
         $(".pg1-txt1").html(pg4TxtBx4);
-        $("#footerContainer").html("");
       } else if (globalWheelCount == 4) {
         $("#img-container").html(pg5Vid5);
+        $("#footerContainer").html("");
         $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
-        $("#footerContainer").html(footer1);
       } else if (globalWheelCount == 5) {
         $(".pg1-txt1").html(pg6TxtBx6);
+        $("#footerContainer").html(footer1);
         $("#img-container").html(pg6Img6);
       } else if (globalWheelCount == 6) {
+        $("body").css({
+          "background-color": "black",
+          width: "100%",
+          overflow: hidden,
+        });
       }
     } else {
       // this means the direction of the mouse wheel could not be determined

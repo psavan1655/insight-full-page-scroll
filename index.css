@@ -18,7 +18,7 @@ html {
 body {
   background-color: black;
   width: 100%;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 div {
@@ -42,12 +42,24 @@ section {
   margin-top: 2rem;
 }
 
+.pg1-vid-class {
+  /* border: 2px solid red; */
+  height: 40rem !important;
+  width: 50rem !important;
+  visibility: visible !important;
+}
+
 .covervid-wrapper {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 10rem;
+  /* left: auto; */
+  left: 30%;
+  /* right: 50%; */
   height: fit-content;
   width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .pg1-contura-txt {
@@ -91,7 +103,7 @@ section {
     right: 25rem;
   }
   100% {
-    right: 15rem;
+    right: 0rem;
   }
 }
 
@@ -106,7 +118,7 @@ section {
 
 .vid01 {
   background: rgba(0, 0, 0, 0);
-  transform: scale(1.5, 1.2);
+  transform: scale(1.2, 1.2);
   height: 40rem;
   width: 50rem;
 }
@@ -117,9 +129,9 @@ section {
   flex-direction: column;
   position: absolute;
   bottom: 5rem;
-  right: 15rem;
-  height: 40rem;
-  width: 50rem;
+  right: 0;
+  height: 45rem;
+  width: 55rem;
   animation: 1.5s ease-out 0s 1 slideInFromLeft;
   overflow: hidden;
   z-index: -1;
@@ -139,16 +151,16 @@ section {
   animation: 1.5s ease-out 0s 1 slideInFromTop;
 }
 
-@keyframes slideInFromLeft2 {
+@keyframes slideInFromLeft3 {
   0% {
-    left: 25rem;
+    left: 65rem;
   }
   100% {
     left: 45rem;
   }
 }
 
-@keyframes slideInFromLeft2Mobile {
+@keyframes slideInFromLeft3Mobile {
   0% {
     left: -10rem;
   }
@@ -157,7 +169,7 @@ section {
   }
 }
 
-@keyframes slideInFromRight2 {
+@keyframes slideInFromRight3 {
   0% {
     left: 30rem;
   }
@@ -166,7 +178,7 @@ section {
   }
 }
 
-@keyframes slideInFromRight2Mobile {
+@keyframes slideInFromRight3Mobile {
   0% {
     left: 10rem;
   }
@@ -177,7 +189,7 @@ section {
 
 .vid03 {
   background: rgba(0, 0, 0, 0);
-  transform: scale(1.5, 1.2);
+  transform: scale(1, 1);
   height: 40rem;
   width: 50rem;
 }
@@ -193,7 +205,7 @@ section {
   z-index: -1;
   overflow: hidden;
   position: absolute;
-  animation: 1.5s ease-out 0s 1 slideInFromRight2;
+  animation: 1.5s ease-out 0s 1 slideInFromRight3;
 }
 
 .pg3-sustainable-txt {
@@ -208,19 +220,135 @@ section {
   font-size: 1.2rem;
   font-weight: 500;
   background-color: rgba(0, 0, 0, 0);
-  animation: 1.5s ease-out 0s 1 slideInFromLeft2;
+  animation: 1.5s ease-out 0s 1 slideInFromLeft3;
 }
 
-.pg5-uppertext-container {
-  /* border: 2px solid red; */
+@keyframes slideInFromLeft4 {
+  0% {
+    left: -10rem;
+  }
+  100% {
+    left: 5rem;
+  }
+}
+
+@keyframes slideInFromRight4 {
+  0% {
+    left: 30rem;
+  }
+  100% {
+    left: 10rem;
+  }
+}
+
+.pg4-txt4 {
+  left: 5rem;
+  top: 0rem;
+  display: flex;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0);
-  transform: scale(2);
-  top: -5rem;
-  margin-left: 55rem;
-  width: 100%;
-  width: max-content;
   position: absolute;
-  z-index: 1;
+  animation: 1.5s ease-out 0s 1 slideInFromLeft4;
+}
+
+.pg4-txt4 > p {
+  margin-left: -1.5rem;
+  font-weight: 500;
+  width: max-content;
+}
+
+.vid04 {
+  background: rgba(0, 0, 0, 0);
+  transform: scale(1.2, 1.2);
+  height: 40rem;
+  width: 50rem;
+}
+
+.covervid-wrapper4 {
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 5rem;
+  right: 0;
+  height: 45rem;
+  width: 55rem;
+  animation: 1.5s ease-out 0s 1 slideInFromLeft;
+  overflow: hidden;
+  z-index: -1;
+}
+
+@keyframes slideInFromLeft5 {
+  0% {
+    left: 50rem;
+  }
+  100% {
+    left: 30rem;
+  }
+}
+
+@keyframes slideInFromRight5 {
+  0% {
+    left: 30rem;
+  }
+  100% {
+    left: 10rem;
+  }
+}
+
+@keyframes slideInFromLeft5Mobile {
+  0% {
+    left: 10rem;
+  }
+  100% {
+    left: 0rem;
+  }
+}
+
+@keyframes slideInFromRight5Mobile {
+  0% {
+    left: 10rem;
+  }
+  100% {
+    left: 0rem;
+  }
+}
+
+.vid05 {
+  background: rgba(0, 0, 0, 0);
+  transform: scale(1, 1);
+  height: 40rem;
+  width: 50rem;
+}
+.covervid-wrapper5 {
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 5rem;
+  left: 10rem;
+  height: 40rem;
+  width: 50rem;
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
+  animation: 1.5s ease-out 0s 1 slideInFromRight5;
+}
+
+.pg5-txt5-upper {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  left: 30rem;
+  top: -5rem;
+  animation: 1.5s ease-out 0s 1 slideInFromLeft5;
+}
+
+.pg5-txt5-upper > p {
+  margin-left: -1.5rem;
+  font-weight: 500;
+  width: max-content;
 }
 
 @keyframes slideInFromLeft6 {
@@ -228,20 +356,9 @@ section {
     right: 50rem;
   }
   100% {
-    right: 30rem;
+    right: 20rem;
   }
 }
-
-.covervid-wrapper6 {
-  bottom: -28rem;
-  transform: scale(1.7, 1.4);
-  position: absolute;
-  right: 30rem;
-  height: 28rem;
-  width: 50rem;
-  animation: 1.5s ease-out 0s 1 slideInFromLeft6;
-}
-
 @keyframes slideInFromLeft6Txt {
   0% {
     left: -10rem;
@@ -249,6 +366,33 @@ section {
   100% {
     left: 0rem;
   }
+}
+
+@keyframes slideInFromLeft6Mobile {
+  0% {
+    right: 50rem;
+  }
+  100% {
+    right: 20rem;
+  }
+}
+@keyframes slideInFromLeft6TxtMobile {
+  0% {
+    left: 10rem;
+  }
+  100% {
+    left: -2rem;
+  }
+}
+
+.covervid-wrapper6 {
+  transform: scale(1.7, 1.4);
+  position: absolute;
+  right: 20rem;
+  height: 20rem;
+  width: 50rem;
+  z-index: -1;
+  animation: 1.5s ease-out 0s 1 slideInFromLeft6;
 }
 
 .pg6-customisable-txt {
@@ -265,10 +409,6 @@ section {
 
 .pg6-img {
   transform: scale(0.5);
-  /* height: 20rem; */
-  /* margin-left: 30rem; */
-  /* width: 30rem; */
-  /* z-index: 2; */
 }
 
 /* Footer */
@@ -388,6 +528,17 @@ section {
 }
 
 @media only screen and (max-width: 768px) {
+  /* Header */
+  .headerList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    z-index: 999;
+    overflow: hidden;
+  }
+
   /* 1st Page */
   .flgshpConsole1 {
     padding-left: 2rem;
@@ -408,12 +559,14 @@ section {
   }
 
   .pg1-img {
+    z-index: -1;
     height: 20rem;
-    margin-top: 10rem;
+    margin-top: 4rem;
   }
 
   .pg1-anatomically-txt {
-    bottom: 4rem;
+    transform: scale(0.8);
+    bottom: 2rem;
     left: 2rem;
     color: white;
     width: 20rem;
@@ -433,6 +586,8 @@ section {
     left: 0rem;
   }
   .pg2-dynamic-txt {
+    transform: scale(0.8);
+
     width: 20rem;
     bottom: 0rem;
     font-size: 1rem;
@@ -452,16 +607,83 @@ section {
     width: 25rem;
     top: 2rem;
     left: 0rem;
-    animation: 1.5s ease-out 0s 1 slideInFromRight2Mobile;
+    animation: 1.5s ease-out 0s 1 slideInFromRight3Mobile;
   }
 
   .pg3-sustainable-txt {
+    transform: scale(0.8);
     left: 0rem;
     top: 18rem;
     width: 20rem;
     margin-top: 1rem;
     font-size: 1rem;
     background-color: rgba(0, 0, 0, 0);
+    animation: 1.5s ease-out 0s 1 slideInFromLeft3Mobile;
+  }
+
+  /* 4th Page */
+  .vid04 {
+    transform: scale(1.2, 1.5);
+    width: 25rem;
+    left: 2rem;
+  }
+
+  .covervid-wrapper4 {
+    width: 25rem;
+    height: 30rem;
+    bottom: 2rem;
+    left: 0rem;
+    animation: 1.5s ease-out 0s 1 slideInFromRight2Mobile;
+  }
+  .pg4-txt4 {
+    transform: scale(0.6);
+    left: 0rem;
+    top: -5rem;
     animation: 1.5s ease-out 0s 1 slideInFromLeft2Mobile;
+  }
+
+  /* 5th Page */
+  .vid05 {
+    transform: scale(1.2, 1.5);
+    width: 25rem;
+    left: 0rem;
+  }
+  .covervid-wrapper5 {
+    transform: scale(0.8);
+    bottom: 0rem;
+    left: 0rem;
+    width: 25rem;
+    height: 30rem;
+    bottom: 6rem;
+    left: 0rem;
+    animation: 1.5s ease-out 0s 1 slideInFromRight5Mobile;
+  }
+
+  .pg5-txt5-upper {
+    transform: scale(0.5);
+    left: 0rem;
+    top: -6rem;
+    animation: 1.5s ease-out 0s 1 slideInFromLeft5Mobile;
+  }
+
+  /* 6th page */
+  .covervid-wrapper6 {
+    transform: scale(0.8);
+    left: -12rem;
+    width: 25rem;
+    height: 30rem;
+    bottom: 5rem;
+    animation: 1.5s ease-out 0s 1 slideInFromLeft6Mobile;
+  }
+
+  .pg6-customisable-txt {
+    transform: scale(0.8);
+    left: -2rem;
+    font-size: 1rem;
+    animation: 1.5s ease-out 0s 1 slideInFromLeft6TxtMobile;
+  }
+
+  .pg6-img {
+    transform: scale(0.5);
   }
 }
