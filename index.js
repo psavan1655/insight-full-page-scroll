@@ -66,7 +66,6 @@ src.addEventListener(
   function (e) {
     deltaX = e.changedTouches[0].clientX - clientX;
     deltaY = e.changedTouches[0].clientY - clientY;
-    console.log(deltaY);
     let touchDirection = deltaY > 0;
     if (touchDirection == false && deltaY < -50) {
       if (globalWheelCount === 10) {
