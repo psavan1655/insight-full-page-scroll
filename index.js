@@ -49,6 +49,7 @@ var video = document.getElementById("myVideo");
 var clientX = 0,
   clientY = 0;
 var globalWheelCount = 0;
+var timeOutBool = true;
 
 $(async function () {
   // await video.load();
@@ -94,151 +95,162 @@ var deltaX = 0,
 src.addEventListener(
   "touchend",
   function (e) {
-    deltaX = e.changedTouches[0].clientX - clientX;
-    deltaY = e.changedTouches[0].clientY - clientY;
-    let touchDirection = deltaY > 0;
-    if (touchDirection == false && deltaY < -50) {
-      if (globalWheelCount === 10) {
-        globalWheelCount = 10;
-      } else {
-        globalWheelCount += 1;
-      }
-      if (globalWheelCount == 1) {
-        // playbackRate
-        $("#vidWrapper")
-          .removeClass("covervid-wrapper")
-          .addClass("covervid-wrapper2");
-        $("#myVideo")[0].currentTime = 0;
-        $("#myVideo")[0].play();
-        $(".pg1-txt1").html(pg2TxtBx2);
-        $(".pg1-anatomically-txt").animate({ opacity: "hide" });
-        $(".flgshpConsole1").animate({ opacity: "hide" });
-        setTimeout(() => {
-          $("#myVideo")[0].pause();
-        }, 2000);
-      } else if (globalWheelCount == 2) {
-        // $("#img-container").html(pg3Vid3);
-        $("#vidWrapper")
-          .removeClass("covervid-wrapper2")
-          .addClass("covervid-wrapper3");
-        $("#myVideo")[0].currentTime = 2;
-        $("#myVideo")[0].play();
-        setTimeout(() => {
-          $("#myVideo")[0].pause();
-        }, 1900);
-        $(".pg1-txt1").html(pg3TxtBx3);
-      } else if (globalWheelCount == 3) {
-        $("#vidWrapper")
-          .removeClass("covervid-wrapper3")
-          .addClass("covervid-wrapper4");
-        $("#myVideo")[0].currentTime = 4;
+    if (timeOutBool === true) {
+      // Main Logic
 
-        $("#myVideo")[0].play();
-        setTimeout(() => {
-          $("#myVideo")[0].pause();
-        }, 1800);
-        $(".pg1-txt1").html(pg4TxtBx4);
-      } else if (globalWheelCount == 4) {
-        $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
-        $("#vidWrapper")
-          .removeClass("covervid-wrapper4")
-          .addClass("covervid-wrapper5");
-        $("#myVideo")[0].currentTime = 6;
-        $("#myVideo")[0].play();
-        setTimeout(() => {
-          $("#myVideo")[0].pause();
-        }, 1500);
-      } else if (globalWheelCount == 5) {
-        $(".pg1-txt1").html(pg6TxtBx6);
-        $("#vidWrapper").css({
-          visibility: "hidden",
-        });
-        $("#pg6ImgContainer").html(pg6Img6);
-      } else if (globalWheelCount == 6) {
-        $("#footerContainer").html(`${footer1}${footer2}`);
-      } else if (globalWheelCount == 7) {
-        $("body").css({
-          "background-color": "black",
-          width: "100%",
-          "overflow-x": "hidden",
-          "overflow-y": "visible",
-        });
-      }
-    } else if (touchDirection == true && deltaY > 50) {
-      if (globalWheelCount === 0) {
-        globalWheelCount = 0;
-      } else {
-        globalWheelCount -= 1;
-      }
-      if (globalWheelCount === 0) {
-        $(".one").animate({ left: "0", opacity: "show" });
-        $(".flgshpConsole1").animate({ opacity: "show" });
-        $(".pg1-anatomically-txt").animate({ opacity: "show" }).html(pg1TxtBx2);
-        $("#vidWrapper")
-          .removeClass("covervid-wrapper2")
-          .addClass("covervid-wrapper");
-        $("#myVideo")[0].currentTime = 0;
-        $(".pg1-txt1").html(pg1TxtBx1);
-      } else if (globalWheelCount == 1) {
-        $("#myVideo")[0].currentTime = 0;
-        $("#myVideo")[0].play();
-        setTimeout(() => {
-          $("#myVideo")[0].pause();
-        }, 2000);
-        $("#vidWrapper")
-          .removeClass("covervid-wrapper3")
-          .addClass("covervid-wrapper2");
+      deltaX = e.changedTouches[0].clientX - clientX;
+      deltaY = e.changedTouches[0].clientY - clientY;
+      let touchDirection = deltaY > 0;
+      if (touchDirection == false && deltaY < -80) {
+        if (globalWheelCount === 10) {
+          globalWheelCount = 10;
+        } else {
+          globalWheelCount += 1;
+        }
+        if (globalWheelCount == 1) {
+          // playbackRate
+          $("#vidWrapper")
+            .removeClass("covervid-wrapper")
+            .addClass("covervid-wrapper2");
+          $("#myVideo")[0].currentTime = 0;
+          $("#myVideo")[0].play();
+          $(".pg1-txt1").html(pg2TxtBx2);
+          $(".pg1-anatomically-txt").animate({ opacity: "hide" });
+          $(".flgshpConsole1").animate({ opacity: "hide" });
+          setTimeout(() => {
+            $("#myVideo")[0].pause();
+          }, 2000);
+        } else if (globalWheelCount == 2) {
+          // $("#img-container").html(pg3Vid3);
+          $("#vidWrapper")
+            .removeClass("covervid-wrapper2")
+            .addClass("covervid-wrapper3");
+          $("#myVideo")[0].currentTime = 2;
+          $("#myVideo")[0].play();
+          setTimeout(() => {
+            $("#myVideo")[0].pause();
+          }, 1900);
+          $(".pg1-txt1").html(pg3TxtBx3);
+        } else if (globalWheelCount == 3) {
+          $("#vidWrapper")
+            .removeClass("covervid-wrapper3")
+            .addClass("covervid-wrapper4");
+          $("#myVideo")[0].currentTime = 4;
 
-        $(".pg1-txt1").html(pg2TxtBx2);
-      } else if (globalWheelCount == 2) {
-        $("#vidWrapper")
-          .removeClass("covervid-wrapper4")
-          .addClass("covervid-wrapper3");
-        $("#myVideo")[0].currentTime = 2;
-        $("#myVideo")[0].play();
-        setTimeout(() => {
-          $("#myVideo")[0].pause();
-        }, 1900);
-        $(".pg1-txt1").html(pg3TxtBx3);
-      } else if (globalWheelCount == 3) {
-        // $("#img-container").html(pg4Vid4);
-        $("#vidWrapper")
-          .removeClass("covervid-wrapper5")
-          .addClass("covervid-wrapper4");
-        $("#myVideo")[0].currentTime = 4;
-        $("#myVideo")[0].play();
-        setTimeout(() => {
-          $("#myVideo")[0].pause();
-        }, 1800);
-        $(".pg1-txt1").html(pg4TxtBx4);
-        $("#footerContainer").html("");
-      } else if (globalWheelCount == 4) {
-        // $(".pg6-img").css({ visibility: "hidden" });
-        $("#vidWrapper")
-          .removeClass("covervid-wrapper6")
-          .addClass("covervid-wrapper5");
-        $("#myVideo")[0].currentTime = 6;
-        $("#myVideo")[0].play();
-        setTimeout(() => {
-          $("#myVideo")[0].pause();
-        }, 1500);
-        $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
-        $("#footerContainer").html(footer1);
-        $("#vidWrapper").css({
-          visibility: "visible",
-        });
-        $("#pg6ImgContainer").html("");
-        $("body").css({
-          "background-color": "black",
-          width: "100%",
-          "overflow-x": "hidden",
-          "overflow-y": "hidden",
-        });
-      } else if (globalWheelCount == 5) {
-        $(".pg1-txt1").html(pg6TxtBx6);
-        $("#pg6ImgContainer").html(pg6Img6);
-      } else if (globalWheelCount == 6) {
+          $("#myVideo")[0].play();
+          setTimeout(() => {
+            $("#myVideo")[0].pause();
+          }, 1800);
+          $(".pg1-txt1").html(pg4TxtBx4);
+        } else if (globalWheelCount == 4) {
+          $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
+          $("#vidWrapper")
+            .removeClass("covervid-wrapper4")
+            .addClass("covervid-wrapper5");
+          $("#myVideo")[0].currentTime = 6;
+          $("#myVideo")[0].play();
+          setTimeout(() => {
+            $("#myVideo")[0].pause();
+          }, 1500);
+        } else if (globalWheelCount == 5) {
+          $(".pg1-txt1").html(pg6TxtBx6);
+          $("#vidWrapper").css({
+            visibility: "hidden",
+          });
+          $("#pg6ImgContainer").html(pg6Img6);
+        } else if (globalWheelCount == 6) {
+          $("#footerContainer").html(`${footer1}${footer2}`);
+        } else if (globalWheelCount == 7) {
+          $("body").css({
+            "background-color": "black",
+            width: "100%",
+            "overflow-x": "hidden",
+            "overflow-y": "visible",
+          });
+        }
+      } else if (touchDirection == true && deltaY > 80) {
+        if (globalWheelCount === 0) {
+          globalWheelCount = 0;
+        } else {
+          globalWheelCount -= 1;
+        }
+        if (globalWheelCount === 0) {
+          $(".one").animate({ left: "0", opacity: "show" });
+          $(".flgshpConsole1").animate({ opacity: "show" });
+          $(".pg1-anatomically-txt")
+            .animate({ opacity: "show" })
+            .html(pg1TxtBx2);
+          $("#vidWrapper")
+            .removeClass("covervid-wrapper2")
+            .addClass("covervid-wrapper");
+          $("#myVideo")[0].currentTime = 0;
+          $(".pg1-txt1").html(pg1TxtBx1);
+        } else if (globalWheelCount == 1) {
+          $("#myVideo")[0].currentTime = 0;
+          $("#myVideo")[0].play();
+          setTimeout(() => {
+            $("#myVideo")[0].pause();
+          }, 2000);
+          $("#vidWrapper")
+            .removeClass("covervid-wrapper3")
+            .addClass("covervid-wrapper2");
+
+          $(".pg1-txt1").html(pg2TxtBx2);
+        } else if (globalWheelCount == 2) {
+          $("#vidWrapper")
+            .removeClass("covervid-wrapper4")
+            .addClass("covervid-wrapper3");
+          $("#myVideo")[0].currentTime = 2;
+          $("#myVideo")[0].play();
+          setTimeout(() => {
+            $("#myVideo")[0].pause();
+          }, 1900);
+          $(".pg1-txt1").html(pg3TxtBx3);
+        } else if (globalWheelCount == 3) {
+          // $("#img-container").html(pg4Vid4);
+          $("#vidWrapper")
+            .removeClass("covervid-wrapper5")
+            .addClass("covervid-wrapper4");
+          $("#myVideo")[0].currentTime = 4;
+          $("#myVideo")[0].play();
+          setTimeout(() => {
+            $("#myVideo")[0].pause();
+          }, 1800);
+          $(".pg1-txt1").html(pg4TxtBx4);
+          $("#footerContainer").html("");
+        } else if (globalWheelCount == 4) {
+          // $(".pg6-img").css({ visibility: "hidden" });
+          $("#vidWrapper")
+            .removeClass("covervid-wrapper6")
+            .addClass("covervid-wrapper5");
+          $("#myVideo")[0].currentTime = 6;
+          $("#myVideo")[0].play();
+          setTimeout(() => {
+            $("#myVideo")[0].pause();
+          }, 1500);
+          $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
+          $("#footerContainer").html(footer1);
+          $("#vidWrapper").css({
+            visibility: "visible",
+          });
+          $("#pg6ImgContainer").html("");
+          $("body").css({
+            "background-color": "black",
+            width: "100%",
+            "overflow-x": "hidden",
+            "overflow-y": "hidden",
+          });
+        } else if (globalWheelCount == 5) {
+          $(".pg1-txt1").html(pg6TxtBx6);
+          $("#pg6ImgContainer").html(pg6Img6);
+        } else if (globalWheelCount == 6) {
+        }
       }
+
+      timeOutBool = false;
+      setTimeout(() => {
+        timeOutBool = true;
+      }, 2000);
     }
 
     // Process the data ...
@@ -263,8 +275,6 @@ function detectMouseWheelDirection(e) {
 
   return direction;
 }
-
-var timeOutBool = true;
 
 async function handleMouseWheelDirection(direction) {
   if (timeOutBool === true) {
