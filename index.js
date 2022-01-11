@@ -54,7 +54,7 @@ $(async function () {
   // await video.load();
 
   var req = new XMLHttpRequest();
-  req.open("GET", "./assets/videos/test.webm", true);
+  req.open("GET", "./assets/videos/content.webm", true);
   req.responseType = "blob";
 
   req.onload = function () {
