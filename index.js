@@ -108,28 +108,31 @@ src.addEventListener(
         $("#vidWrapper")
           .removeClass("covervid-wrapper")
           .addClass("covervid-wrapper2");
+        $("#myVideo")[0].currentTime = 0;
         $("#myVideo")[0].play();
         $(".pg1-txt1").html(pg2TxtBx2);
         $(".pg1-anatomically-txt").animate({ opacity: "hide" });
         $(".flgshpConsole1").animate({ opacity: "hide" });
         setTimeout(() => {
           $("#myVideo")[0].pause();
-        }, 1800);
+        }, 2000);
       } else if (globalWheelCount == 2) {
         // $("#img-container").html(pg3Vid3);
         $("#vidWrapper")
           .removeClass("covervid-wrapper2")
           .addClass("covervid-wrapper3");
+        $("#myVideo")[0].currentTime = 2;
         $("#myVideo")[0].play();
         setTimeout(() => {
           $("#myVideo")[0].pause();
-        }, 2100);
+        }, 1900);
         $(".pg1-txt1").html(pg3TxtBx3);
       } else if (globalWheelCount == 3) {
-        // $("#img-container").html(pg4Vid4);
         $("#vidWrapper")
           .removeClass("covervid-wrapper3")
           .addClass("covervid-wrapper4");
+        $("#myVideo")[0].currentTime = 4;
+
         $("#myVideo")[0].play();
         setTimeout(() => {
           $("#myVideo")[0].pause();
@@ -140,10 +143,11 @@ src.addEventListener(
         $("#vidWrapper")
           .removeClass("covervid-wrapper4")
           .addClass("covervid-wrapper5");
+        $("#myVideo")[0].currentTime = 6;
         $("#myVideo")[0].play();
         setTimeout(() => {
           $("#myVideo")[0].pause();
-        }, 2500);
+        }, 1500);
       } else if (globalWheelCount == 5) {
         $(".pg1-txt1").html(pg6TxtBx6);
         $("#vidWrapper").css({
@@ -176,22 +180,36 @@ src.addEventListener(
         $("#myVideo")[0].currentTime = 0;
         $(".pg1-txt1").html(pg1TxtBx1);
       } else if (globalWheelCount == 1) {
-        // $("#img-container").html(pg2Vid2);
+        $("#myVideo")[0].currentTime = 0;
+        $("#myVideo")[0].play();
+        setTimeout(() => {
+          $("#myVideo")[0].pause();
+        }, 2000);
         $("#vidWrapper")
           .removeClass("covervid-wrapper3")
           .addClass("covervid-wrapper2");
+
         $(".pg1-txt1").html(pg2TxtBx2);
       } else if (globalWheelCount == 2) {
-        // $("#img-container").html(pg3Vid3);
         $("#vidWrapper")
           .removeClass("covervid-wrapper4")
           .addClass("covervid-wrapper3");
+        $("#myVideo")[0].currentTime = 2;
+        $("#myVideo")[0].play();
+        setTimeout(() => {
+          $("#myVideo")[0].pause();
+        }, 1900);
         $(".pg1-txt1").html(pg3TxtBx3);
       } else if (globalWheelCount == 3) {
         // $("#img-container").html(pg4Vid4);
         $("#vidWrapper")
           .removeClass("covervid-wrapper5")
           .addClass("covervid-wrapper4");
+        $("#myVideo")[0].currentTime = 4;
+        $("#myVideo")[0].play();
+        setTimeout(() => {
+          $("#myVideo")[0].pause();
+        }, 1800);
         $(".pg1-txt1").html(pg4TxtBx4);
         $("#footerContainer").html("");
       } else if (globalWheelCount == 4) {
@@ -199,6 +217,11 @@ src.addEventListener(
         $("#vidWrapper")
           .removeClass("covervid-wrapper6")
           .addClass("covervid-wrapper5");
+        $("#myVideo")[0].currentTime = 6;
+        $("#myVideo")[0].play();
+        setTimeout(() => {
+          $("#myVideo")[0].pause();
+        }, 1500);
         $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
         $("#footerContainer").html(footer1);
         $("#vidWrapper").css({
@@ -296,7 +319,7 @@ async function handleMouseWheelDirection(direction) {
         $("#myVideo")[0].play();
         setTimeout(() => {
           $("#myVideo")[0].pause();
-        }, 2500);
+        }, 1500);
       } else if (globalWheelCount == 5) {
         $(".pg1-txt1").html(pg6TxtBx6);
         $("#vidWrapper").css({
@@ -370,7 +393,7 @@ async function handleMouseWheelDirection(direction) {
         $("#myVideo")[0].play();
         setTimeout(() => {
           $("#myVideo")[0].pause();
-        }, 2500);
+        }, 1500);
         $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
         $("#footerContainer").html(footer1);
         $("#vidWrapper").css({
