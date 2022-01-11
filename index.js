@@ -45,9 +45,15 @@ const footer2 =
   "<div class='btm-bar-footer d-flex flex-wrap flex-row justify-content-around align-items-center'>        <div class='btm-bar-footer-txt'>          SEE CONTOURA<sup> &reg;</sup> UP CLOSE.        </div>        <div class='btm-bar-footer-sample'>REQUEST A SAMPLE</div>      </div>     <div class='d-flex flex-wrap flex-column bg-dark p-5'>        <div class='d-flex flex-wrap flex-row justify-content-between text-white'        >          <div>            <div></div>            <div>IT'S WHAT'S INSIDE THAT COUNTS</div>          </div>          <div class='socialmedia-container d-flex flex-row'>            Follow us            <div class='footer-socialmedia-icon'>              &nbsp;              <i class='fab fa-linkedin-in'> </i>            </div>            <div class='footer-socialmedia-icon1'>              &nbsp;  <i class='fab fa-youtube'> </i>            </div>          </div>        </div>        <div class='d-flex flew-wrap flex-row text-white footer-policy'>          <div>Privacy Policy</div>          <div>Terms & Conditions</div>         <div>Site Map</div>          <div style='border: none !important'>Contact</div>        </div>        <div class='d-flex flex-wrap flex-column text-white footer-address'>          <div>&COPY; 2021 Matmarket, LLC. - All rights reserved</div>          <div>            Portsmouth, USA &#8226; Portland, USA &#8226; Birmingham, UK &#8226;            Hong Kong &#8226; Dongguan, China &#8226; Jinjiang, China &#8226;            Busan, Korea &#8226; Ho Chi Minn, Vietnam          </div>          <div>Website by fishnet</div>         </div>      </div>  </footer>";
 
 var src = document.getElementById("pageone");
+var video = document.getElementById("myVideo");
 var clientX = 0,
   clientY = 0;
 var globalWheelCount = 0;
+
+$(async function () {
+  await video.load();
+  video.pause();
+});
 
 src.addEventListener(
   "touchstart",
@@ -74,30 +80,60 @@ src.addEventListener(
         globalWheelCount += 1;
       }
       if (globalWheelCount == 1) {
+        // playbackRate
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper")
+          .addClass("covervid-wrapper2");
+        $("#myVideo")[0].play();
         $(".pg1-txt1").html(pg2TxtBx2);
         $(".pg1-anatomically-txt").animate({ opacity: "hide" });
-        // $(".pg1-anatomically-txt").html("");
         $(".flgshpConsole1").animate({ opacity: "hide" });
-        $("#img-container").html(pg2Vid2);
+        setTimeout(() => {
+          $("#myVideo")[0].pause();
+        }, 1800);
       } else if (globalWheelCount == 2) {
-        $("#img-container").html(pg3Vid3);
+        // $("#img-container").html(pg3Vid3);
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper2")
+          .addClass("covervid-wrapper3");
+        $("#myVideo")[0].play();
+        setTimeout(() => {
+          $("#myVideo")[0].pause();
+        }, 2100);
         $(".pg1-txt1").html(pg3TxtBx3);
       } else if (globalWheelCount == 3) {
-        $("#img-container").html(pg4Vid4);
+        // $("#img-container").html(pg4Vid4);
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper3")
+          .addClass("covervid-wrapper4");
+        $("#myVideo")[0].play();
+        setTimeout(() => {
+          $("#myVideo")[0].pause();
+        }, 1800);
         $(".pg1-txt1").html(pg4TxtBx4);
       } else if (globalWheelCount == 4) {
-        $("#img-container").html(pg5Vid5);
         $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper4")
+          .addClass("covervid-wrapper5");
+        $("#myVideo")[0].play();
+        setTimeout(() => {
+          $("#myVideo")[0].pause();
+        }, 2500);
       } else if (globalWheelCount == 5) {
         $(".pg1-txt1").html(pg6TxtBx6);
-        $("#img-container").html(pg6Img6);
+        $("#vidWrapper").css({
+          visibility: "hidden",
+        });
+        $("#pg6ImgContainer").html(pg6Img6);
       } else if (globalWheelCount == 6) {
         $("#footerContainer").html(`${footer1}${footer2}`);
       } else if (globalWheelCount == 7) {
         $("body").css({
           "background-color": "black",
           width: "100%",
-          overflow: "visible",
+          "overflow-x": "hidden",
+          "overflow-y": "visible",
         });
       }
     } else if (touchDirection == true && deltaY > 50) {
@@ -110,31 +146,51 @@ src.addEventListener(
         $(".one").animate({ left: "0", opacity: "show" });
         $(".flgshpConsole1").animate({ opacity: "show" });
         $(".pg1-anatomically-txt").animate({ opacity: "show" }).html(pg1TxtBx2);
-        $("#img-container").html(pg1Img1);
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper2")
+          .addClass("covervid-wrapper");
+        $("#myVideo")[0].currentTime = 0;
         $(".pg1-txt1").html(pg1TxtBx1);
       } else if (globalWheelCount == 1) {
-        $("#img-container").html(pg2Vid2);
+        // $("#img-container").html(pg2Vid2);
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper3")
+          .addClass("covervid-wrapper2");
         $(".pg1-txt1").html(pg2TxtBx2);
       } else if (globalWheelCount == 2) {
-        $("#img-container").html(pg3Vid3);
+        // $("#img-container").html(pg3Vid3);
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper4")
+          .addClass("covervid-wrapper3");
         $(".pg1-txt1").html(pg3TxtBx3);
       } else if (globalWheelCount == 3) {
-        $("#img-container").html(pg4Vid4);
+        // $("#img-container").html(pg4Vid4);
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper5")
+          .addClass("covervid-wrapper4");
         $(".pg1-txt1").html(pg4TxtBx4);
         $("#footerContainer").html("");
       } else if (globalWheelCount == 4) {
-        $("#img-container").html(pg5Vid5);
+        // $(".pg6-img").css({ visibility: "hidden" });
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper6")
+          .addClass("covervid-wrapper5");
         $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
         $("#footerContainer").html(footer1);
-      } else if (globalWheelCount == 5) {
-        $(".pg1-txt1").html(pg6TxtBx6);
-        $("#img-container").html(pg6Img6);
-      } else if (globalWheelCount == 6) {
+        $("#vidWrapper").css({
+          visibility: "visible",
+        });
+        $("#pg6ImgContainer").html("");
         $("body").css({
           "background-color": "black",
           width: "100%",
-          overflow: hidden,
+          "overflow-x": "hidden",
+          "overflow-y": "hidden",
         });
+      } else if (globalWheelCount == 5) {
+        $(".pg1-txt1").html(pg6TxtBx6);
+        $("#pg6ImgContainer").html(pg6Img6);
+      } else if (globalWheelCount == 6) {
       }
     }
 
@@ -147,14 +203,11 @@ function detectMouseWheelDirection(e) {
   var delta = null,
     direction = false;
   if (!e) {
-    // if the event is not provided, we get it from the window object
     e = window.event;
   }
   if (e.wheelDelta) {
-    // will work in most cases
     delta = e.wheelDelta / 60;
   } else if (e.detail) {
-    // fallback for Firefox
     delta = -e.detail / 2;
   }
   if (delta !== null) {
@@ -176,22 +229,58 @@ async function handleMouseWheelDirection(direction) {
         globalWheelCount += 1;
       }
       if (globalWheelCount == 1) {
-        $("#img-container").html(pg2Vid2);
+        // playbackRate
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper")
+          .addClass("covervid-wrapper2");
+        $("#myVideo")[0].currentTime = 0;
+        $("#myVideo")[0].play();
         $(".pg1-txt1").html(pg2TxtBx2);
         $(".pg1-anatomically-txt").animate({ opacity: "hide" });
         $(".flgshpConsole1").animate({ opacity: "hide" });
+        setTimeout(() => {
+          $("#myVideo")[0].pause();
+        }, 1800);
       } else if (globalWheelCount == 2) {
-        $("#img-container").html(pg3Vid3);
+        // $("#img-container").html(pg3Vid3);
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper2")
+          .addClass("covervid-wrapper3");
+        $("#myVideo")[0].currentTime = 1.8;
+        $("#myVideo")[0].play();
+        setTimeout(() => {
+          $("#myVideo")[0].pause();
+        }, 2100);
         $(".pg1-txt1").html(pg3TxtBx3);
       } else if (globalWheelCount == 3) {
-        $("#img-container").html(pg4Vid4);
+        // $("#img-container").html(pg4Vid4);
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper3")
+          .addClass("covervid-wrapper4");
+        // $("#myVideo")[0].currentTime = 3.9;
+
+        $("#myVideo")[0].play();
+        setTimeout(() => {
+          $("#myVideo")[0].pause();
+        }, 1800);
         $(".pg1-txt1").html(pg4TxtBx4);
       } else if (globalWheelCount == 4) {
-        $("#img-container").html(pg5Vid5);
         $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper4")
+          .addClass("covervid-wrapper5");
+        // $("#myVideo")[0].currentTime = 5.7;
+
+        $("#myVideo")[0].play();
+        setTimeout(() => {
+          $("#myVideo")[0].pause();
+        }, 2500);
       } else if (globalWheelCount == 5) {
         $(".pg1-txt1").html(pg6TxtBx6);
-        $("#img-container").html(pg6Img6);
+        $("#vidWrapper").css({
+          visibility: "hidden",
+        });
+        $("#pg6ImgContainer").html(pg6Img6);
       } else if (globalWheelCount == 6) {
         $("#footerContainer").html(`${footer1}${footer2}`);
       } else if (globalWheelCount == 7) {
@@ -212,32 +301,51 @@ async function handleMouseWheelDirection(direction) {
         $(".one").animate({ left: "0", opacity: "show" });
         $(".flgshpConsole1").animate({ opacity: "show" });
         $(".pg1-anatomically-txt").animate({ opacity: "show" }).html(pg1TxtBx2);
-        $("#img-container").html(pg1Img1);
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper2")
+          .addClass("covervid-wrapper");
+        $("#myVideo")[0].currentTime = 0;
         $(".pg1-txt1").html(pg1TxtBx1);
       } else if (globalWheelCount == 1) {
-        $("#img-container").html(pg2Vid2);
+        // $("#img-container").html(pg2Vid2);
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper3")
+          .addClass("covervid-wrapper2");
         $(".pg1-txt1").html(pg2TxtBx2);
       } else if (globalWheelCount == 2) {
-        $("#img-container").html(pg3Vid3);
+        // $("#img-container").html(pg3Vid3);
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper4")
+          .addClass("covervid-wrapper3");
         $(".pg1-txt1").html(pg3TxtBx3);
       } else if (globalWheelCount == 3) {
-        $("#img-container").html(pg4Vid4);
+        // $("#img-container").html(pg4Vid4);
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper5")
+          .addClass("covervid-wrapper4");
         $(".pg1-txt1").html(pg4TxtBx4);
         $("#footerContainer").html("");
       } else if (globalWheelCount == 4) {
-        $("#img-container").html(pg5Vid5);
+        // $(".pg6-img").css({ visibility: "hidden" });
+        $("#vidWrapper")
+          .removeClass("covervid-wrapper6")
+          .addClass("covervid-wrapper5");
         $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
         $("#footerContainer").html(footer1);
-      } else if (globalWheelCount == 5) {
-        $(".pg1-txt1").html(pg6TxtBx6);
-        $("#img-container").html(pg6Img6);
-      } else if (globalWheelCount == 6) {
+        $("#vidWrapper").css({
+          visibility: "visible",
+        });
+        $("#pg6ImgContainer").html("");
         $("body").css({
           "background-color": "black",
           width: "100%",
           "overflow-x": "hidden",
           "overflow-y": "hidden",
         });
+      } else if (globalWheelCount == 5) {
+        $(".pg1-txt1").html(pg6TxtBx6);
+        $("#pg6ImgContainer").html(pg6Img6);
+      } else if (globalWheelCount == 6) {
       }
     } else {
       // this means the direction of the mouse wheel could not be determined

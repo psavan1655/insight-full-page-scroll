@@ -44,24 +44,18 @@ section {
   margin-top: 2rem;
 }
 
-.pg1-vid-class {
-  /* border: 2px solid red; */
-  height: 40rem !important;
-  width: 50rem !important;
-  visibility: visible !important;
-}
-
 .covervid-wrapper {
+  background-color: rgba(0, 0, 0, 0);
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   position: absolute;
-  top: 10rem;
-  /* left: auto; */
-  left: 30%;
+  bottom: 5rem;
+  left: 18rem;
+  right: 0;
+  height: 40rem;
+  width: 50rem;
   /* right: 50%; */
-  height: fit-content;
-  width: fit-content;
+  z-index: -1;
 }
 
 .pg1-contura-txt {
@@ -102,10 +96,18 @@ section {
 
 @keyframes slideInFromLeft {
   0% {
-    right: 25rem;
+    left: 18rem;
   }
   100% {
-    right: 0rem;
+    left: 40rem;
+  }
+}
+@keyframes slideInFromLeftMobile {
+  0% {
+    left: -10rem;
+  }
+  100% {
+    left: 0rem;
   }
 }
 
@@ -120,7 +122,7 @@ section {
 
 .vid01 {
   background: rgba(0, 0, 0, 0);
-  transform: scale(1.2, 1.2);
+  /* transform: scale(1.2, 1.2); */
   height: 40rem;
   width: 50rem;
 }
@@ -131,9 +133,9 @@ section {
   flex-direction: column;
   position: absolute;
   bottom: 5rem;
-  right: 0;
-  height: 45rem;
-  width: 55rem;
+  left: 40rem;
+  height: 40rem;
+  width: 50rem;
   animation: 1.5s ease-out 0s 1 slideInFromLeft;
   overflow: hidden;
   z-index: -1;
@@ -227,6 +229,15 @@ section {
 
 @keyframes slideInFromLeft4 {
   0% {
+    left: 10rem;
+  }
+  100% {
+    left: 40rem;
+  }
+}
+
+@keyframes slideInFromLeft4Txt {
+  0% {
     left: -10rem;
   }
   100% {
@@ -250,7 +261,7 @@ section {
   align-items: center;
   background-color: rgba(0, 0, 0, 0);
   position: absolute;
-  animation: 1.5s ease-out 0s 1 slideInFromLeft4;
+  animation: 1.5s ease-out 0s 1 slideInFromLeft4Txt;
 }
 
 .pg4-txt4 > p {
@@ -272,10 +283,10 @@ section {
   flex-direction: column;
   position: absolute;
   bottom: 5rem;
-  right: 0;
-  height: 45rem;
-  width: 55rem;
-  animation: 1.5s ease-out 0s 1 slideInFromLeft;
+  left: 40rem;
+  height: 40rem;
+  width: 50rem;
+  animation: 1.5s ease-out 0s 1 slideInFromLeft4;
   overflow: hidden;
   z-index: -1;
 }
@@ -554,10 +565,9 @@ section {
   }
 
   .covervid-wrapper {
-    height: fit-content;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    width: 25rem;
+    top: 5rem;
+    left: 0rem;
   }
 
   .pg1-img {
@@ -586,6 +596,7 @@ section {
     width: 25rem;
     top: 2rem;
     left: 0rem;
+    animation: 1.5s ease-out 0s 1 slideInFromLeftMobile;
   }
   .pg2-dynamic-txt {
     transform: scale(0.8);
