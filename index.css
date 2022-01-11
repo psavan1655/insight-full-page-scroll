@@ -136,7 +136,7 @@ section {
   left: 40rem;
   height: 40rem;
   width: 50rem;
-  animation: 1.5s ease-out 0s 1 slideInFromLeft;
+  animation: 0.8s ease-out 0s 1 slideInFromLeft;
   overflow: hidden;
   z-index: -1;
 }
@@ -152,7 +152,7 @@ section {
   font-size: 1.2rem;
   font-weight: 500;
   background-color: rgba(0, 0, 0, 0);
-  animation: 1.5s ease-out 0s 1 slideInFromTop;
+  animation: 0.8s ease-out 0s 1 slideInFromTop;
 }
 
 @keyframes slideInFromLeft3 {
@@ -175,8 +175,9 @@ section {
 
 @keyframes slideInFromRight3 {
   0% {
-    left: 30rem;
+    left: 40rem;
   }
+
   100% {
     left: 10rem;
   }
@@ -209,7 +210,7 @@ section {
   z-index: -1;
   overflow: hidden;
   position: absolute;
-  animation: 1.5s ease-out 0s 1 slideInFromRight3;
+  animation: slideInFromRight3 0.8s;
 }
 
 .pg3-sustainable-txt {
@@ -224,7 +225,7 @@ section {
   font-size: 1.2rem;
   font-weight: 500;
   background-color: rgba(0, 0, 0, 0);
-  animation: 1.5s ease-out 0s 1 slideInFromLeft3;
+  animation: 0.8s ease-out 0s 1 slideInFromLeft3;
 }
 
 @keyframes slideInFromLeft4 {
@@ -261,7 +262,7 @@ section {
   align-items: center;
   background-color: rgba(0, 0, 0, 0);
   position: absolute;
-  animation: 1.5s ease-out 0s 1 slideInFromLeft4Txt;
+  animation: 0.8s ease-out 0s 1 slideInFromLeft4Txt;
 }
 
 .pg4-txt4 > p {
@@ -286,14 +287,14 @@ section {
   left: 40rem;
   height: 40rem;
   width: 50rem;
-  animation: 1.5s ease-out 0s 1 slideInFromLeft4;
+  animation: 0.8s ease-out 0s 1 slideInFromLeft4;
   overflow: hidden;
   z-index: -1;
 }
 
 @keyframes slideInFromLeft5 {
   0% {
-    left: 50rem;
+    left: 40rem;
   }
   100% {
     left: 30rem;
@@ -302,7 +303,7 @@ section {
 
 @keyframes slideInFromRight5 {
   0% {
-    left: 30rem;
+    left: 40rem;
   }
   100% {
     left: 10rem;
@@ -345,7 +346,7 @@ section {
   z-index: -1;
   overflow: hidden;
   position: absolute;
-  animation: 1.5s ease-out 0s 1 slideInFromRight5;
+  animation: 0.8s ease-out 0s 1 slideInFromRight5;
 }
 
 .pg5-txt5-upper {
@@ -355,7 +356,7 @@ section {
   position: absolute;
   left: 30rem;
   top: -5rem;
-  animation: 1.5s ease-out 0s 1 slideInFromLeft5;
+  animation: 0.8s ease-out 0s 1 slideInFromLeft5;
 }
 
 .pg5-txt5-upper > p {
@@ -405,7 +406,7 @@ section {
   height: 20rem;
   width: 50rem;
   z-index: -1;
-  animation: 1.5s ease-out 0s 1 slideInFromLeft6;
+  animation: 0.8s ease-out 0s 1 slideInFromLeft6;
 }
 
 .pg6-customisable-txt {
@@ -417,7 +418,7 @@ section {
   width: 25rem;
   font-size: 1.2rem;
   font-weight: 500;
-  animation: 1.5s ease-out 0s 1 slideInFromLeft6Txt;
+  animation: 0.8s ease-out 0s 1 slideInFromLeft6Txt;
 }
 
 .pg6-img {
@@ -552,7 +553,7 @@ section {
     overflow: hidden;
   }
 
-  /* 1st Page */
+  /* 0.8st Page */
   .flgshpConsole1 {
     padding-left: 2rem;
     font-size: 22px;
@@ -596,7 +597,7 @@ section {
     width: 25rem;
     top: 2rem;
     left: 0rem;
-    animation: 1.5s ease-out 0s 1 slideInFromLeftMobile;
+    animation: 0.8s ease-out 0s 1 slideInFromLeftMobile;
   }
   .pg2-dynamic-txt {
     transform: scale(0.8);
@@ -620,7 +621,7 @@ section {
     width: 25rem;
     top: 2rem;
     left: 0rem;
-    animation: 1.5s ease-out 0s 1 slideInFromRight3Mobile;
+    animation: 0.8s ease-out 0s 1 slideInFromRight3Mobile;
   }
 
   .pg3-sustainable-txt {
@@ -631,7 +632,7 @@ section {
     margin-top: 1rem;
     font-size: 1rem;
     background-color: rgba(0, 0, 0, 0);
-    animation: 1.5s ease-out 0s 1 slideInFromLeft3Mobile;
+    animation: 0.8s ease-out 0s 1 slideInFromLeft3Mobile;
   }
 
   /* 4th Page */
@@ -646,13 +647,13 @@ section {
     height: 30rem;
     bottom: 2rem;
     left: 0rem;
-    animation: 1.5s ease-out 0s 1 slideInFromRight2Mobile;
+    animation: 0.8s ease-out 0s 1 slideInFromRight2Mobile;
   }
   .pg4-txt4 {
     transform: scale(0.6);
     left: 0rem;
     top: -5rem;
-    animation: 1.5s ease-out 0s 1 slideInFromLeft2Mobile;
+    animation: 0.8s ease-out 0s 1 slideInFromLeft2Mobile;
   }
 
   /* 5th Page */
@@ -669,14 +670,14 @@ section {
     height: 30rem;
     bottom: 6rem;
     left: 0rem;
-    animation: 1.5s ease-out 0s 1 slideInFromRight5Mobile;
+    animation: 0.8s ease-out 0s 1 slideInFromRight5Mobile;
   }
 
   .pg5-txt5-upper {
     transform: scale(0.5);
     left: 0rem;
     top: -6rem;
-    animation: 1.5s ease-out 0s 1 slideInFromLeft5Mobile;
+    animation: 0.8s ease-out 0s 1 slideInFromLeft5Mobile;
   }
 
   /* 6th page */
@@ -686,14 +687,14 @@ section {
     width: 25rem;
     height: 30rem;
     bottom: 5rem;
-    animation: 1.5s ease-out 0s 1 slideInFromLeft6Mobile;
+    animation: 0.8s ease-out 0s 1 slideInFromLeft6Mobile;
   }
 
   .pg6-customisable-txt {
     transform: scale(0.8);
     left: -2rem;
     font-size: 1rem;
-    animation: 1.5s ease-out 0s 1 slideInFromLeft6TxtMobile;
+    animation: 0.8s ease-out 0s 1 slideInFromLeft6TxtMobile;
   }
 
   .pg6-img {

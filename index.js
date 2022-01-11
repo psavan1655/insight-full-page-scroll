@@ -64,19 +64,13 @@ $(async function () {
     if (this.status === 200) {
       var videoBlob = this.response;
       var vid = URL.createObjectURL(videoBlob); // IE10+
-      console.log(vid);
       // Video is now downloaded
       // and we can set it as source on the video element
       video.src = vid;
       // video.pause();
     }
   };
-  // req.onerror = function () {
-  // Error
-  // };
-  console.log(req);
-  // video.currentTime = 0;
-  console.log(video.readyState);
+  video.currentTime = 0;
   video.pause();
 });
 
