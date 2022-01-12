@@ -241,7 +241,6 @@ async function handleMouseWheelDirection(direction) {
   if (globalWheelCount < 7) {
     if (timeOutBool === true) {
       // Main logic
-      console.log(globalWheelCount);
       if (direction == "down" && video.readyState === 4) {
         if (globalWheelCount === 15) {
           globalWheelCount = 15;
@@ -308,23 +307,21 @@ async function handleMouseWheelDirection(direction) {
             .animate({ opacity: "show" })
             .html(pg1TxtBx2);
           $("#myVideo")[0].currentTime = 1.5;
+
           var intervalRewind;
           clearInterval(intervalRewind);
-
           intervalRewind = setInterval(function () {
-            // video.playbackRate = 1.0;
             if (video.currentTime <= 0) {
               video.pause();
               clearInterval(intervalRewind);
             } else {
               video.currentTime -= 0.06;
             }
-            // console.clear();
-            //console.log(video.currentTime);
           }, 50);
           $(".pg1-txt1").html(pg1TxtBx1);
         } else if (globalWheelCount == 1) {
           $("#myVideo")[0].currentTime = 0;
+
           $("#myVideo")[0].play();
           setTimeout(() => {
             $("#myVideo")[0].pause();
@@ -332,6 +329,7 @@ async function handleMouseWheelDirection(direction) {
           $(".pg1-txt1").html(pg2TxtBx2);
         } else if (globalWheelCount == 2) {
           $("#myVideo")[0].currentTime = 2;
+
           $("#myVideo")[0].play();
           setTimeout(() => {
             $("#myVideo")[0].pause();
@@ -382,7 +380,6 @@ async function handleMouseWheelDirection(direction) {
       }
     }
   } else {
-    console.log(direction);
     if (direction === "down") {
       if (globalWheelCount === 15) {
         globalWheelCount = 15;
