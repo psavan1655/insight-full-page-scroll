@@ -50,7 +50,7 @@ section {
   flex-direction: column;
   position: absolute;
   bottom: 5rem;
-  left: 18rem;
+  left: 30rem;
   right: 0;
   height: 40rem;
   width: 50rem;
@@ -116,7 +116,16 @@ section {
     top: 0rem;
   }
   100% {
-    top: 18rem;
+    top: 20rem;
+  }
+}
+
+@keyframes slideInFromTopMobile {
+  0% {
+    left: -10rem;
+  }
+  100% {
+    left: -2rem;
   }
 }
 
@@ -145,7 +154,7 @@ section {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 18rem;
+  top: 20rem;
   left: 0rem;
   color: white;
   width: 25rem;
@@ -157,19 +166,19 @@ section {
 
 @keyframes slideInFromLeft3 {
   0% {
-    left: 65rem;
+    left: 75rem;
   }
   100% {
-    left: 45rem;
+    left: 55rem;
   }
 }
 
 @keyframes slideInFromLeft3Mobile {
   0% {
-    left: -10rem;
+    left: 10rem;
   }
   100% {
-    left: 0rem;
+    left: 5rem;
   }
 }
 
@@ -202,6 +211,7 @@ section {
   background-color: rgba(0, 0, 0, 0);
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   position: absolute;
   bottom: 5rem;
   left: 10rem;
@@ -218,7 +228,7 @@ section {
   flex-direction: column;
   flex-wrap: wrap;
   position: absolute;
-  left: 45rem;
+  left: 55rem;
   top: 20rem;
   color: white;
   width: 25rem;
@@ -294,10 +304,10 @@ section {
 
 @keyframes slideInFromLeft5 {
   0% {
-    left: 40rem;
+    left: 50rem;
   }
   100% {
-    left: 30rem;
+    left: 40rem;
   }
 }
 
@@ -328,6 +338,24 @@ section {
   }
 }
 
+@keyframes slideInFromLeft5Down {
+  0% {
+    left: 75rem;
+  }
+  100% {
+    left: 65rem;
+  }
+}
+
+@keyframes slideInFromLeft5Down1 {
+  0% {
+    left: 55rem;
+  }
+  100% {
+    left: 45rem;
+  }
+}
+
 .vid05 {
   background: rgba(0, 0, 0, 0);
   transform: scale(1, 1);
@@ -351,11 +379,10 @@ section {
 
 .pg5-txt5-upper {
   display: flex;
-  align-items: center;
   background-color: rgba(0, 0, 0, 0);
   position: absolute;
-  left: 30rem;
-  top: -5rem;
+  left: 40rem;
+  top: -rem;
   animation: 0.8s ease-out 0s 1 slideInFromLeft5;
 }
 
@@ -363,6 +390,21 @@ section {
   margin-left: -1.5rem;
   font-weight: 500;
   width: max-content;
+}
+
+.pg5-comfort-txt {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 65rem;
+  top: 20rem;
+  color: white;
+  width: 25rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: rgba(0, 0, 0, 0);
+  animation: 0.8s ease-out 0s 1 slideInFromLeft5Down;
 }
 
 @keyframes slideInFromLeft6 {
@@ -409,6 +451,16 @@ section {
   animation: 0.8s ease-out 0s 1 slideInFromLeft6;
 }
 
+.covervid-wrapper6-without-animation {
+  transform: scale(1.7, 1.4);
+  position: absolute;
+  right: 20rem;
+  height: 20rem;
+  width: 50rem;
+  z-index: -1;
+  /* animation: 0.8s ease-out 0s 1 slideInFromLeft6; */
+}
+
 .pg6-customisable-txt {
   background-color: rgba(0, 0, 0, 0);
   position: absolute;
@@ -422,6 +474,10 @@ section {
 }
 
 .pg6-img {
+  transform: scale(0.5);
+}
+
+.pg6-img-without-animation {
   transform: scale(0.5);
 }
 
@@ -541,6 +597,40 @@ section {
   margin-top: 0.2rem;
 }
 
+@media only screen and (max-width: 1700px) {
+  /* Header */
+  .headerList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    z-index: 999;
+    overflow: hidden;
+  }
+
+  .covervid-wrapper {
+    width: 25rem;
+    bottom: 5rem;
+    left: 15rem;
+  }
+
+  .pg5-comfort-txt {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 45rem;
+    top: 20rem;
+    color: white;
+    width: 25rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0);
+    animation: 0.8s ease-out 0s 1 slideInFromLeft5Down1;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   /* Header */
   .headerList {
@@ -553,7 +643,7 @@ section {
     overflow: hidden;
   }
 
-  /* 0.8st Page */
+  /* 1st Page */
   .flgshpConsole1 {
     padding-left: 2rem;
     font-size: 22px;
@@ -567,7 +657,7 @@ section {
 
   .covervid-wrapper {
     width: 25rem;
-    top: 5rem;
+    top: 6rem;
     left: 0rem;
   }
 
@@ -601,12 +691,11 @@ section {
   }
   .pg2-dynamic-txt {
     transform: scale(0.8);
-
-    width: 20rem;
-    bottom: 0rem;
+    width: 25rem;
+    top: 23rem;
     font-size: 1rem;
-    /* top: 5rem; */
-    left: 0rem;
+    left: -2rem;
+    animation: 0.8s ease-out 0s 1 slideInFromTopMobile;
   }
 
   /* 3rd page */
@@ -626,8 +715,8 @@ section {
 
   .pg3-sustainable-txt {
     transform: scale(0.8);
-    left: 0rem;
-    top: 18rem;
+    left: 5rem;
+    top: 23rem;
     width: 20rem;
     margin-top: 1rem;
     font-size: 1rem;
@@ -652,7 +741,7 @@ section {
   .pg4-txt4 {
     transform: scale(0.6);
     left: 0rem;
-    top: -5rem;
+    top: 20rem;
     animation: 0.8s ease-out 0s 1 slideInFromLeft2Mobile;
   }
 
@@ -678,6 +767,17 @@ section {
     left: 0rem;
     top: -6rem;
     animation: 0.8s ease-out 0s 1 slideInFromLeft5Mobile;
+  }
+
+  .pg5-comfort-txt {
+    transform: scale(0.8);
+    left: 5rem;
+    top: 23rem;
+    width: 20rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0);
+    animation: 0.8s ease-out 0s 1 slideInFromLeft3Mobile;
   }
 
   /* 6th page */
