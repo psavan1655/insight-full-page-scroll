@@ -131,7 +131,16 @@ section {
 
 .vid01 {
   background: rgba(0, 0, 0, 0);
-  /* transform: scale(1.2, 1.2); */
+  position: absolute;
+  transform: scale(1.2, 1.2);
+  height: 40rem;
+  width: 50rem;
+}
+
+.vid02 {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  transform: scale(1.2, 1.2);
   height: 40rem;
   width: 50rem;
 }
@@ -382,7 +391,7 @@ section {
   background-color: rgba(0, 0, 0, 0);
   position: absolute;
   left: 40rem;
-  top: -rem;
+  top: -5rem;
   animation: 0.8s ease-out 0s 1 slideInFromLeft5;
 }
 
@@ -679,6 +688,11 @@ section {
 
   /* 2nd page */
   .vid01 {
+    transform: scale(1.2, 1.5);
+    width: 25rem;
+    left: 2rem;
+  }
+  .vid02 {
     transform: scale(1.2, 1.5);
     width: 25rem;
     left: 2rem;

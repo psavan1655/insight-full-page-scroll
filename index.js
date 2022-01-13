@@ -49,12 +49,17 @@ const footer2 =
 
 var src = document.getElementById("pageone");
 var video = document.getElementById("myVideo");
+var reverseVideo = document.getElementById("myVideo2");
 var clientX = 0,
   clientY = 0;
 var globalWheelCount = 0;
 var timeOutBool = true;
 
 $(async function () {
+  $(".vid02").css({
+    visibility: "hidden",
+    opacity: 0,
+  });
   var req = new XMLHttpRequest();
   req.open("GET", "./assets/videos/content.webm", true);
   req.responseType = "blob";
@@ -92,6 +97,14 @@ src.addEventListener(
       deltaY = e.changedTouches[0].clientY - clientY;
       let touchDirection = deltaY > 0;
       if (touchDirection == false && deltaY < -80) {
+        $(".vid02").css({
+          visibility: "hidden",
+          opacity: 0,
+        });
+        $(".vid01").css({
+          visibility: "visible",
+          opacity: 1,
+        });
         if (globalWheelCount === 10) {
           globalWheelCount = 10;
         } else {
@@ -133,6 +146,14 @@ src.addEventListener(
           $("#vidWrapper").css({
             visibility: "hidden",
           });
+          $(".vid02").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
+          $(".vid01").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
           $("#pg6ImgContainer").html(pg6Img6);
         } else if (globalWheelCount == 6) {
           $("#footerContainer").html(`${footer1}${footer2}`);
@@ -142,9 +163,33 @@ src.addEventListener(
             "overflow-x": "hidden",
             "overflow-y": "visible",
           });
-        } else if (globalWheelCount == 7) {
+          $(".vid02").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
+          $(".vid01").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
+        } else if (globalWheelCount >= 7) {
+          $(".vid02").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
+          $(".vid01").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
         }
       } else if (touchDirection == true && deltaY > 80) {
+        $(".vid01").css({
+          visibility: "hidden",
+          opacity: 0,
+        });
+        $(".vid02").css({
+          visibility: "visible",
+          opacity: 1,
+        });
         if (globalWheelCount === 0) {
           globalWheelCount = 0;
         } else {
@@ -156,36 +201,63 @@ src.addEventListener(
           $(".pg1-anatomically-txt")
             .animate({ opacity: "show" })
             .html(pg1TxtBx2);
-          $("#myVideo")[0].currentTime = 0;
+          $("#myVideo2")[0].currentTime = 0;
+
+          $("#myVideo2")[0].play();
+          setTimeout(() => {
+            $("#myVideo2")[0].pause();
+          }, 1500);
           $(".pg1-txt1").html(pg1TxtBx1);
         } else if (globalWheelCount == 1) {
-          $("#myVideo")[0].currentTime = 0;
-          $("#myVideo")[0].play();
-          setTimeout(() => {
-            $("#myVideo")[0].pause();
-          }, 2000);
+          $("#myVideo2")[0].currentTime = 2;
 
+          $("#myVideo2")[0].play();
+          setTimeout(() => {
+            $("#myVideo2")[0].pause();
+          }, 1050);
           $(".pg1-txt1").html(pg2TxtBx2);
         } else if (globalWheelCount == 2) {
-          $("#myVideo")[0].currentTime = 2;
-          $("#myVideo")[0].play();
+          $("#myVideo2")[0].currentTime = 3.4;
+
+          $("#myVideo2")[0].play();
           setTimeout(() => {
-            $("#myVideo")[0].pause();
-          }, 1900);
+            $("#myVideo2")[0].pause();
+          }, 1100);
+
+          // $("#myVideo")[0].currentTime = 2;
+
+          // $("#myVideo")[0].play();
+          // setTimeout(() => {
+          //   $("#myVideo")[0].pause();
+          // }, 1900);
           $(".pg1-txt1").html(pg3TxtBx3);
         } else if (globalWheelCount == 3) {
-          $("#myVideo")[0].currentTime = 4;
-          $("#myVideo")[0].play();
+          $("#myVideo2")[0].currentTime = 6;
+
+          $("#myVideo2")[0].play();
           setTimeout(() => {
-            $("#myVideo")[0].pause();
-          }, 1800);
+            $("#myVideo2")[0].pause();
+          }, 2000);
+
+          // $("#myVideo")[0].currentTime = 4;
+          // $("#myVideo")[0].play();
+          // setTimeout(() => {
+          //   $("#myVideo")[0].pause();
+          // }, 1800);
           $(".pg1-txt1").html(pg4TxtBx4);
         } else if (globalWheelCount == 4) {
-          $("#myVideo")[0].currentTime = 6;
-          $("#myVideo")[0].play();
-          setTimeout(() => {
-            $("#myVideo")[0].pause();
-          }, 1500);
+          $("#myVideo2")[0].currentTime = 5.8;
+
+          // $("#myVideo2")[0].play();
+          // setTimeout(() => {
+          //   $("#myVideo2")[0].pause();
+          // }, 1200);
+
+          // $("#myVideo")[0].currentTime = 6;
+          // $("#myVideo")[0].play();
+          // setTimeout(() => {
+          //   $("#myVideo")[0].pause();
+          // }, 1500);
           $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
           $("#footerContainer").html("");
 
@@ -200,11 +272,38 @@ src.addEventListener(
             "overflow-y": "hidden",
           });
         } else if (globalWheelCount == 5) {
+          // $("#myVideo2")[0].currentTime = 5.8;
+          reverseVideo.pause();
           $("#footerContainer").html(footer1);
           $(".pg1-txt1").html(pg6TxtBx6);
           $("#pg6ImgContainer").html(pg6Img6WithoutAnimnation);
+          $(".vid02").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
+          $(".vid01").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
         } else if (globalWheelCount == 6) {
           $(".pg1-txt1").html(pg6TxtBx6);
+          $(".vid02").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
+          $(".vid01").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
+        } else if (globalWheelCount >= 7) {
+          $(".vid02").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
+          $(".vid01").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
         }
       }
 
@@ -242,6 +341,14 @@ async function handleMouseWheelDirection(direction) {
     if (timeOutBool === true) {
       // Main logic
       if (direction == "down" && video.readyState === 4) {
+        $(".vid02").css({
+          visibility: "hidden",
+          opacity: 0,
+        });
+        $(".vid01").css({
+          visibility: "visible",
+          opacity: 1,
+        });
         if (globalWheelCount === 15) {
           globalWheelCount = 15;
         } else {
@@ -283,6 +390,14 @@ async function handleMouseWheelDirection(direction) {
           $("#vidWrapper").css({
             visibility: "hidden",
           });
+          $(".vid02").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
+          $(".vid01").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
           $("#pg6ImgContainer").html(pg6Img6);
         } else if (globalWheelCount == 6) {
           $("#footerContainer").html(`${footer1}${footer2}`);
@@ -292,9 +407,25 @@ async function handleMouseWheelDirection(direction) {
             "overflow-x": "hidden",
             "overflow-y": "visible",
           });
-        } else if (globalWheelCount == 7) {
+        } else if (globalWheelCount >= 7) {
+          $(".vid02").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
+          $(".vid01").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
         }
       } else if (direction == "up") {
+        $(".vid01").css({
+          visibility: "hidden",
+          opacity: 0,
+        });
+        $(".vid02").css({
+          visibility: "visible",
+          opacity: 1,
+        });
         if (globalWheelCount === 0) {
           globalWheelCount = 0;
         } else {
@@ -306,48 +437,63 @@ async function handleMouseWheelDirection(direction) {
           $(".pg1-anatomically-txt")
             .animate({ opacity: "show" })
             .html(pg1TxtBx2);
-          $("#myVideo")[0].currentTime = 1.5;
+          $("#myVideo2")[0].currentTime = 0;
 
-          var intervalRewind;
-          clearInterval(intervalRewind);
-          intervalRewind = setInterval(function () {
-            if (video.currentTime <= 0) {
-              video.pause();
-              clearInterval(intervalRewind);
-            } else {
-              video.currentTime -= 0.06;
-            }
-          }, 50);
+          $("#myVideo2")[0].play();
+          setTimeout(() => {
+            $("#myVideo2")[0].pause();
+          }, 1500);
           $(".pg1-txt1").html(pg1TxtBx1);
         } else if (globalWheelCount == 1) {
-          $("#myVideo")[0].currentTime = 0;
+          $("#myVideo2")[0].currentTime = 2;
 
-          $("#myVideo")[0].play();
+          $("#myVideo2")[0].play();
           setTimeout(() => {
-            $("#myVideo")[0].pause();
-          }, 2000);
+            $("#myVideo2")[0].pause();
+          }, 1050);
           $(".pg1-txt1").html(pg2TxtBx2);
         } else if (globalWheelCount == 2) {
-          $("#myVideo")[0].currentTime = 2;
+          $("#myVideo2")[0].currentTime = 3.4;
 
-          $("#myVideo")[0].play();
+          $("#myVideo2")[0].play();
           setTimeout(() => {
-            $("#myVideo")[0].pause();
-          }, 1900);
+            $("#myVideo2")[0].pause();
+          }, 1100);
+
+          // $("#myVideo")[0].currentTime = 2;
+
+          // $("#myVideo")[0].play();
+          // setTimeout(() => {
+          //   $("#myVideo")[0].pause();
+          // }, 1900);
           $(".pg1-txt1").html(pg3TxtBx3);
         } else if (globalWheelCount == 3) {
-          $("#myVideo")[0].currentTime = 4;
-          $("#myVideo")[0].play();
+          $("#myVideo2")[0].currentTime = 6;
+
+          $("#myVideo2")[0].play();
           setTimeout(() => {
-            $("#myVideo")[0].pause();
-          }, 1800);
+            $("#myVideo2")[0].pause();
+          }, 2000);
+
+          // $("#myVideo")[0].currentTime = 4;
+          // $("#myVideo")[0].play();
+          // setTimeout(() => {
+          //   $("#myVideo")[0].pause();
+          // }, 1800);
           $(".pg1-txt1").html(pg4TxtBx4);
         } else if (globalWheelCount == 4) {
-          $("#myVideo")[0].currentTime = 6;
-          $("#myVideo")[0].play();
-          setTimeout(() => {
-            $("#myVideo")[0].pause();
-          }, 1500);
+          $("#myVideo2")[0].currentTime = 5.8;
+
+          // $("#myVideo2")[0].play();
+          // setTimeout(() => {
+          //   $("#myVideo2")[0].pause();
+          // }, 1200);
+
+          // $("#myVideo")[0].currentTime = 6;
+          // $("#myVideo")[0].play();
+          // setTimeout(() => {
+          //   $("#myVideo")[0].pause();
+          // }, 1500);
           $(".pg1-txt1").html(`${pg5TxtBx5}${pg5TxtBx5Upper}`);
           $("#footerContainer").html("");
 
@@ -362,11 +508,38 @@ async function handleMouseWheelDirection(direction) {
             "overflow-y": "hidden",
           });
         } else if (globalWheelCount == 5) {
+          // $("#myVideo2")[0].currentTime = 5.8;
+          reverseVideo.pause();
           $("#footerContainer").html(footer1);
           $(".pg1-txt1").html(pg6TxtBx6);
           $("#pg6ImgContainer").html(pg6Img6WithoutAnimnation);
+          $(".vid02").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
+          $(".vid01").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
         } else if (globalWheelCount == 6) {
           $(".pg1-txt1").html(pg6TxtBx6);
+          $(".vid02").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
+          $(".vid01").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
+        } else if (globalWheelCount >= 7) {
+          $(".vid02").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
+          $(".vid01").css({
+            visibility: "hidden",
+            opacity: 0,
+          });
         }
       } else {
       }
